@@ -1,0 +1,216 @@
+
+// /* 一、scss使用变量 */
+// $highlight-color: #F90; //Compass是Sass的工具库（toolkit）
+// $basic-border: 1px solid black;
+//   .nav{
+// 		$width: 100px;
+// 	  border:$basic-border ;
+// 	  color: $highlight-color;
+// 	  width: $width;
+//   }
+
+// /* 二、scss嵌套规则 */
+// #content {
+// 	article {
+// 		h1 { 
+// 			color: #333 
+// 		}
+// 		p { 
+// 			margin-bottom: 1.4em
+// 		}
+// 	}
+// 	aside { 
+// 		background-color: #EEE 
+// 	}
+// 	&:hover {
+// 		 color: red 
+// 	}
+// }
+// #content aside {
+// 	color: red;
+// 	body.ie & { color: green }//当用户使用ie时为body添加一个类名
+// }
+// .container {
+// 	h1, h2, h3 {margin-bottom: .8em}
+// }
+// nav, aside {
+// 	a {color: blue}
+// }
+// article > section { border: 1px solid #ccc }
+// header + p { font-size: 1.1em } //同层相邻组合选择器+选择header元素后紧跟的p元素
+// article ~ article { border-top: 1px dashed #ccc }  //同层全体组合选择器~，选择所有跟在article后的同层article元素
+// article {
+// 	~ article { border-top: 1px dashed #ccc }
+// 	> section { background: #eee }
+// 	dl > {
+// 		dt { color: #333 }
+// 		dd { color: #555 }
+// 	}
+// 	nav + & { margin-top: 0 }
+// }
+// nav {
+//   border: {
+//   	style: solid;
+//   	width: 1px;
+//   	color: #ccc;
+//   }
+// }
+// nav {
+// 	border: 1px solid #ccc {
+// 		left: 0px;
+// 		right: 0px;
+// 	}
+// }
+
+// /* 三、导入SASS文件 */
+// @import "./element.scss";
+// @import "./_night-sky.scss"; //只用于导入的scss
+// $fancybox-width: 400px !default; //如果这个变量被声明赋值了，那就用它声明的值，否则就用这个默认值。
+// .fancybox {
+// 	width: $fancybox-width;
+// }
+// $link-color: blue;
+// $link-color: red;
+// a {
+// 	color: $link-color;
+// }
+// .blue-theme {
+// 	@import "./_night-sky.scss";
+// }
+
+// /* 四、静默注释 */
+// body {
+// 	color: #333; // 这种注释内容不会出现在生成的css文件中
+// 	padding: 0; /* 这种注释内容会出现在生成的css文件中 */
+// }
+// body {
+// 	color /* 这块注释内容不会出现在生成的css中 */: #333;
+// 	padding: 1 /* 这块注释内容也不会出现在生成的css中 */ 0;
+// }
+
+// /* 五、混合器 */
+// @mixin rounded-corners { //混合器的使用场景，避免滥用。
+// 	-moz-border-radius: 5px;
+// 	-webkit-border-radius: 5px;  //混合器主要用于展示性样式的重用，而类名用于语义化样式的重用
+// 	border-radius: 5px;
+// }
+// @mixin no-bullets {
+// 	list-style: none;
+// 	li {
+// 	  list-style-image: none;
+// 	  list-style-type: none;
+// 	  margin-left: 0px;
+// 	}
+// }
+// @mixin link-colors($normal, $hover, $visited) {
+// 	color: $normal;
+// 	&:hover { color: $hover; }
+// 	&:visited { color: $visited; }
+// }
+// @mixin link-colors(
+//     $normal,
+//     $hover: $normal,
+//     $visited: $normal
+//   )
+// {
+//   color: $normal;
+//   &:hover { color: $hover; }
+//   &:visited { color: $visited; }
+// }
+// .notice {
+// 	background-color: green;
+// 	border: 2px solid #00aa00; //混合器是展示性的描述，用来描述一条css规则应用之后会产生怎样的效果。
+// 	@include rounded-corners; //最重要的区别就是类名是在html文件中应用的，而混合器是在样式表中应用的
+// }
+// ul.plain {
+// 	color: #444;
+// 	@include no-bullets;
+// }
+// a {
+// 	@include link-colors(blue, red, green);
+// }
+// a {
+//     @include link-colors(
+//       $normal: blue, //不用在意顺序
+//       $visited: green,
+//       $hover: red
+//   );
+// }
+// a{
+// 	@include link-colors(red)
+// }
+
+// /* 六、使用选择器继承来精简CSS */
+// .error {
+// 	border: 1px solid red;
+// 	background-color: #fdd;
+//   }
+//   .seriousError {
+// 	@extend .error; //通过选择器继承继承样式
+// 	border-width: 3px;
+// }
+// .error a{  //应用到.seriousError a
+// 	color: red;
+// 	font-weight: 100; 
+//   }
+//   h1.error { //应用到hl.seriousError
+// 	font-size: 1.2rem;
+// }
+// .disabled {
+// 	color: gray;
+// 	@extend a;//继承存在样式层叠的问题。被继承的样式会保持原有定义位置和选择器权重不变。通常来说这并不会引起什么问题，但是知道这点总没有坏处。
+// }
+// .seriousError{
+// 	// @extend .important.error; 如果我希望也继承.important和.error的样式
+// }
+// #main .seriousError{
+// 	@extend .error; //只有#main .seriousError才能继承
+// 	//但是如果你不小心，可能会让生成的css中包含大量的选择器复制。避免这种情况出现的最好方法就是不要在css规则中使用后代选择器（比如.foo .bar）去继承css规则。如果你这么做，同时被继承的css规则有通过后代选择器修饰的样式，生成css中的选择器的数量很快就会失控：
+// }
+
+// /* 七、函数：建议自定义函数前添加前缀避免命名冲突 */
+// $grid-width: 40px;
+// $gutter-width: 10px;
+// @function grid-width($n) {
+//   @return $n * $grid-width + ($n - 1) * $gutter-width;
+// }
+// #sidebar { width: grid-width(5); }
+// #sidebar { width: grid-width($n: 5); }
+// //编译后
+// #sidebar {width: 240px;}
+
+// @function pxtorem($args) {
+// 	@return $args/54/3 * 1rem;
+// }
+// @function pxtovh($args) {
+// 	@return $args/19.2 * 1vw;
+// }
+
+// /* 八、@media */
+// @media only screen and (max-width: 500px) {
+//     .gridmenu {
+//         width:100%;
+//     }
+//     .gridmain {
+//         width:100%;
+//     }
+//     .gridright {
+//         width:100%;
+//     }
+// }
+// .footer{
+// 	@media screen and (max-width: 1200px) {
+// 		top: pxtorem(-58);
+// 		right: pxtorem(-60);
+// 		width: pxtorem(134);
+// 		height: pxtorem(118);
+// 	}
+// }
+
+// /*九、@font-face */
+// //@font-face的作用是从网上下载并使用自定义字体，使页面显示字体不依赖用户的操作系统字体环境。
+// @font-face {
+// 	font-family: myFirstFont;
+// 	src: url('Sansation_Light.ttf'),
+//     url('Sansation_Light.eot'); /* IE9 */
+// }

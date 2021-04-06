@@ -1,0 +1,25 @@
+{
+	"common": {
+	  "errorMsg": "报错啦",
+	  "dark": "暗系",
+	  "light": "亮系",
+	  "zh": "中文",
+	  "en": "英文",
+	  "login": "登录",
+	  "registered": "注册"
+	},
+	"nav": {
+	  "home": "首页",
+	  "dataList": "数据统计"
+	},
+	"user": {
+	  "info": "用户信息",
+	  "account": "个人账号",
+	  "massage": "消息中心",
+	  "logout": "退出",
+	  "userInfo": "个人中心"
+	},
+	"codes": {
+	  "250011": "产品名称已存在！"
+	}
+  }
