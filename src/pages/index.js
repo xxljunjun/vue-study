@@ -16,6 +16,9 @@ const stard1 = ()=>import('./stard/stard1.vue')
 const stard2 = ()=>import('./stard/stard2.vue')
 const stard3 = ()=>import('./stard/stard3.vue')
 
+//vue的学习模块
+const Studyvue = ()=>import("./studyvue/studyvue.vue")
+
 
 import { FindPanelA, FindPanelB } from '../components/'
 
@@ -179,6 +182,19 @@ const routes = [
         text: '20210318',
         path: '/stard/four',
         component: stard3
+      }
+    ]
+  },
+  {
+    id: 16,
+    text: '学习vue3.0',
+    icon: 'el-icon-goods',
+    arr: [
+      {
+        id: 1601,
+        text: '第一天的学习',
+        path: '/studyvue/one',
+        component: Studyvue
       }
     ]
   }
