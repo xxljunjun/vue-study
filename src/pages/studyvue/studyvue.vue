@@ -14,6 +14,9 @@
 		<div class="box">
 			{{doneTodos}}
 		</div>
+		<div class="box">
+			<button @click="outtologin" class="brn">点我去登录</button>
+		</div>
 	</div>
 </template>
 
@@ -48,6 +51,9 @@ export default {
 			// this.tochangelargemsg(newmessage)
 
 		},
+		outtologin(){
+			this.$store.commit("needLogin",true)
+		}
 	},
 	mounted(){
 		console.log("vuex状态管理工具",this.$store)
