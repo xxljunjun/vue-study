@@ -17,5 +17,8 @@ export default {
     delTask(state, payload) {
       state.list = state.list.filter(ele=>ele.id!==payload)
     }
+  },
+  actions:{
+    
   }
 }
