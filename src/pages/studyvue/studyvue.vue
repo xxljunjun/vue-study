@@ -17,6 +17,19 @@
 		<div class="box">
 			<button @click="outtologin" class="brn">点我去登录</button>
 		</div>
+		<div class="box">
+			<div v-pre class="tojoin">
+				{{msg}}
+			</div>
+		</div>
+		<div class="box" >
+			<div class="tojoin" v-cloak>
+				{{msg}}
+			</div>
+		</div>
+		<div class="box">
+			<button @click="event" class="brn">点我去eventbus</button>
+		</div>
 	</div>
 </template>
 
@@ -24,6 +37,7 @@
 //mapActions
 //mapMutations
 import { mapState,mapGetters} from 'vuex'
+import {EventBus} from "@/event-bus.js"
 export default {
 	data(){
 		return{
@@ -53,6 +67,10 @@ export default {
 		},
 		outtologin(){
 			this.$store.commit("needLogin",true)
+		},
+		event(){
+			// console.log("1111")
+			EventBus.$emit("changeNum",true)
 		}
 	},
 	mounted(){
@@ -62,11 +80,17 @@ export default {
 		console.log("this.$store.state",this.$store.state)
 		console.log("this.$store.getters",this.$store.getters)
 	},
+	destroyed(){
+		EventBus.$off("changeNum")
+	}
 }
 </script>
 
 <style lang="scss" scoped>
 .studyvue_box{
+	[v-cloak] {
+		display: none;
+	}
 	color: #000;
 	.brn{
 		cursor: pointer;

@@ -4,6 +4,9 @@
     <h1>我是xiong和di的父组件：{{snum}}</h1>
     <Xiong :snum="snum" @zidingyishijian="zidingyishijian"/>
     <Di :snum="snum" @zidi="zidi"/>
+    <div class="box">
+        <button @click="toEvent">点我触发全局的事件总线</button>
+    </div>
   </div>
 </template>
 
@@ -23,16 +26,25 @@ export default {
   mounted(){
     
   },
+  destroyed(){
+    this.$eventBus.$off("change")
+  },
   methods: {
     zidingyishijian(){
       this.snum++
     },
     zidi(){
       this.snum--
+    },
+    toEvent(){
+      this.$eventBus.$emit("change",true)
     }
   },
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+.box{
+  margin-top: 30px;
+}
 </style>

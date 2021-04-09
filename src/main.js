@@ -12,8 +12,13 @@ Vue.use(ElementUI)
 Vue.prototype.$http = http
 Vue.prototype.$img = img
 Vue.config.productionTip = false
+
+//事件总线通信
 const eventBus = new Vue()
 Vue.prototype.$eventBus = eventBus
+
+// 阻止启动生产消息
+Vue.config.productionTip = false
 
 // 根容器创建,Vue环境
 new Vue({

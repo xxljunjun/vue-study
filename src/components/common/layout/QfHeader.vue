@@ -1,9 +1,11 @@
 <template>
 <div class="qf-header">
-  header
-  <button @click="out">点我弹出弹窗</button>
-  <button @click="out_zero">点我弹窗归零</button>
-
+  <button @click="out" class="btn">点我弹出弹窗</button>
+  <button @click="out_zero" class="btn">点我弹窗归零</button>
+  <span class="box">
+    利用event-bus组件之前的通信：{{event_number}}
+  </span>
+  <button @click="eventbusthing" class="btn">eventbus兄弟组件通信</button> 
   <!-- 模拟登录弹窗 -->
   <el-dialog
       title="提示"
@@ -20,11 +22,13 @@
 </template>
 
 <script>
+import {EventBus} from "@/event-bus.js"
 export default {
   data(){
     return{
       msg:"1111111",
-      dialogVisible: false
+      dialogVisible: false,
+      event_number:10,
     }
   },
   watch:{
@@ -42,7 +46,19 @@ export default {
   },
   mounted(){
     // console.log("vuex的状态管理工具",this.$store)
+    EventBus.$on("changeNum",(val)=>{
+      console.log(val)
+      this.event_number++
+    })
+    this.$eventBus.$on("change",(val)=>{
+      console.log(val)
+      this.event_number--
+    })
   },
+  destroyed(){
+		EventBus.off("changeNum")
+    this.$eventBus.$off("change")
+	},
   methods:{
     out(){
       console.log("点我")
@@ -50,10 +66,22 @@ export default {
     },
     out_zero(){
       this.$store.commit("needLogin",false)
+    },
+    eventbusthing(){
+      this.event_number++
     }
   }
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+.qf-header{
+  color: #000;
+  .btn{
+    margin-right: 20px;
+  }
+  .box{
+    margin-right: 20px;
+  }
+}
 </style>
