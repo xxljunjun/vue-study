@@ -3,29 +3,13 @@
   <div class="qf-logo">
     <img :src="$img.logo" alt="logo">
   </div>
-  <!-- <a href="/#/home">首页概况</a>
-  <a href="/#/find">公司动态</a>
-  <a href="/#/user">个人中心</a> -->
-
-  <!-- 声明式路由导航 -->
-  <!-- router-link被编译以后，默认被渲染成 a 标签 -->
-  <!-- <div v-for='nav in routes' :key='nav.id'>
-    <router-link
-      :to='nav.path'
-      tag='div'
-      :exact='nav.exact'
-      active-class='on'
-      v-text='nav.text'
-      v-if='!nav.isNotNav'
-    >
-    </router-link>
-  </div> -->
-
   <el-menu
     background-color="#545c64"
     text-color="#fff"
     :unique-opened='true'
-    active-text-color="#ffd04b">
+    active-text-color="#ffd04b"
+    @select="chooseSome"
+  >
     <!-- 一层循环 -->
     <el-submenu v-for='group in routes' :key='group.id' :index="group.id+''">
       <template slot="title">
@@ -42,7 +26,6 @@
       </div>
     </el-submenu>
   </el-menu>
-
 </div>
 </template>
 
@@ -53,6 +36,15 @@ export default {
   data: function() {
     return {
       routes
+    }
+  },
+  mounted(){
+    console.log("routes",this.routes)
+  },
+  methods:{
+    chooseSome(index,indexPath){
+      console.log("index",index)
+      console.log("indexPath",indexPath)
     }
   }
 }
@@ -68,6 +60,7 @@ export default {
   left: 0;
   bottom: 0;
   overflow: auto;
+  position: relative;
 }
 .qf-logo {
   width: 60px;

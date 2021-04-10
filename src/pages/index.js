@@ -20,7 +20,7 @@ const stard3 = ()=>import('./stard/stard3.vue')
 const Studyvue = ()=>import("./studyvue/studyvue.vue")
 
 
-import { FindPanelA, FindPanelB } from '../components/'
+// import { FindPanelA, FindPanelB } from '../components/'
 
 // 异步组件
 // Vue.component('qf-async', (resolve, reject)=>{
@@ -47,6 +47,7 @@ const routes = [
         path: '/',
         component: Home,
         text: '首页概况',
+        name:"首页概况",
         exact: true
         // 【命名视图】当访问首页时，使用一个叫abc的视图容器来承载Home组件
         // components: {
@@ -61,11 +62,12 @@ const routes = [
         component: Find,
         text: '公司新闻',
         exact: false,
+        name:"公司新闻",
         // 嵌套视图
-        children: [
-          { path: '', component: FindPanelA },   // /find/
-          { path: 't2', component: FindPanelB }    // /find/t2
-        ],
+        // children: [
+        //   { path: '', component: FindPanelA },   // /find/
+        //   { path: 't2', component: FindPanelB }    // /find/t2
+        // ],
         // components: {
         //   efg: Find,
         // }
@@ -74,6 +76,7 @@ const routes = [
         id: 1003,
         text: 'TodoList',
         path: '/todo',
+        name:"TodoList",
         component: Todo,
         exact: true
       }
@@ -83,15 +86,16 @@ const routes = [
     id: 11,
     text: '系统管理',
     icon: 'el-icon-setting',
+    name:"系统管理",
     arr: [
       {
         id: 1101,
         // path: '/user',
-        path: '/useroiwioewoieoioiewoiewoiewoiewi',
+        path: '/user',
         // 路由别名：你可以理解成是当前路由path的另一个容易记忆的小名
         alias: '/u',
         // 路由命名：给当前路由规则取一个名字
-        name: 'me',
+        name: '个人中心',
         component: User,
         text: '个人中心',
         exact: true
@@ -101,6 +105,7 @@ const routes = [
   {
     id: 12,
     text: '音乐管理',
+    name: '音乐管理',
     icon: 'el-icon-platform-eleme',
     arr: [
       {
@@ -109,11 +114,13 @@ const routes = [
         // component: ()=>import('./music/MusicList.vue'),
         component: MusicList,
         text: '音乐列表',
+        name: '音乐列表',
         exact: false
       },
       {
         id: 1202,
         text: '音乐详情',
+        name: '音乐详情',
         path: '/music/detail/:id',
         component: MusicDetail,
         isNotNav: true,   // 不渲染成菜单
@@ -124,17 +131,20 @@ const routes = [
   {
     id: 13,
     text: '商品管理',
+    name: '商品管理',
     icon: 'el-icon-goods',
     arr: [
       {
         id: 1301,
         text: '商品列表',
         path: '/good/list',
+        name: '商品列表',
         component: GoodList
       },
       {
         id: 1302,
         text: '商品新增',
+        name: '商品新增',
         path: '/good/add/:id',
         component: GoodAdd,
         isNotNav: true
@@ -144,11 +154,13 @@ const routes = [
   {
     id: 14,
     text: '营销中心',
+    name: '营销中心',
     icon: 'el-icon-goods',
     arr: [
       {
         id: 1401,
         text: '轮播图',
+        name: '轮播图',
         path: '/center/ad',
         component: Ad
       }
@@ -157,11 +169,13 @@ const routes = [
   {
     id: 15,
     text: '预备练习',
+    name: '预备练习',
     icon: 'el-icon-goods',
     arr: [
       {
         id: 1401,
         text: '20210209',
+        name: '20210209',
         path: '/stard/one',
         component: stard
       },
@@ -169,17 +183,20 @@ const routes = [
         id: 1402,
         text: '202102010',
         path: '/stard/two',
+        name: '202102010',
         component: stard1
       },
       {
         id: 1403,
         text: '202103005',
+        name: '202103005',
         path: '/stard/three',
         component: stard2
       },
       {
         id: 1404,
         text: '20210318',
+        name: '20210318',
         path: '/stard/four',
         component: stard3
       }
@@ -188,11 +205,13 @@ const routes = [
   {
     id: 16,
     text: '学习vue3.0',
+    name: '学习vue3',
     icon: 'el-icon-goods',
     arr: [
       {
         id: 1601,
         text: '第一天的学习',
+        name: '第一天的学习',
         path: '/studyvue/one',
         component: Studyvue
       }
