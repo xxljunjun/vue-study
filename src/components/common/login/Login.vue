@@ -38,14 +38,19 @@ export default {
   },
   methods: {
     loginSubmit() {
-      console.log('user', this.user)
+
+      this.$router.replace('/')
+
+
+
+      // console.log('user', this.user)
       // 调登录接口
-      this.$http.fetchLogin(this.user).then(res=>{
-        console.log('login res', res)
+      // this.$http.fetchLogin(this.user).then(res=>{
+        // console.log('login res', res)
         // 第一步：把token存储在localStorage中
-        localStorage.setItem('token', res.token)
+        // localStorage.setItem('token', res.token)
         // 第二步：跳转到系统内部首页
-        this.$router.history.replace('/')
+        // this.$router.history.replace('/')
 
         // token是后端根据用户登录信息生成的加密字符串，用于鉴权（识别用户身份）
         // 它之所以流利，是因为安全。它是固定长度的，由三个部分组成，分别是加密算法、用户信息、密钥。
@@ -54,7 +59,7 @@ export default {
         // 那前端该如何登录成功时的token传递给后端呢？
         // config.headers.Authorization = localStorage.getItem('token')
         // 当token失败（后端验证它失败时），后端一般会提示前端token失败。此时，前端要在响应拦截器重定向到登录页。
-      })
+      // })
     }
   }
 }

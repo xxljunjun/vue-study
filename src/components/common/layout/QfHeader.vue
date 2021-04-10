@@ -6,6 +6,7 @@
     利用event-bus组件之前的通信：{{event_number}}
   </span>
   <button @click="eventbusthing" class="btn">eventbus兄弟组件通信</button> 
+  <router-link :to="{ path: '/login'}" replace>跳转登录页面</router-link>
   <!-- 模拟登录弹窗 -->
   <el-dialog
       title="提示"
@@ -54,6 +55,15 @@ export default {
       console.log(val)
       this.event_number--
     })
+
+    // //字符串
+    // router.push('home')
+    // // 对象
+    // router.push({ path: 'home' })
+    // // 命名的路由
+    // router.push({ name: 'user', params: { userId: '123' }})
+    // // 带查询参数，变成 /register?plan=private
+    // router.push({ path: 'register', query: { plan: 'private' }})
   },
   destroyed(){
 		EventBus.off("changeNum")

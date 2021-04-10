@@ -30,6 +30,9 @@
 		<div class="box">
 			<button @click="event" class="brn">点我去eventbus</button>
 		</div>
+		<div class="box">
+			<router-link :to="{ path: '/login'}" replace>跳转登录页面</router-link>
+		</div>
 	</div>
 </template>
 

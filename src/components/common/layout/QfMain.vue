@@ -9,6 +9,7 @@
     </div>
     <!-- 关闭所有 -->
     <div class="close_All">
+      
       <el-dropdown  @command="handleCommand">
         <span class="el-dropdown-link">
           下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
@@ -130,8 +131,8 @@ export default {
     cursor: pointer;
     position: relative;
     line-height: 30px;
-    color: 
-    #fff;
+    color:#fff;
+    margin-right: 10px;
     .close{
       position: absolute;
       right: 15px;
