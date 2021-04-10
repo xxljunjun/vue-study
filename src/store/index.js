@@ -13,7 +13,8 @@ export default new Vuex.Store({
       { id: 1, text: '...', done: true },
       { id: 2, text: '...', done: false }
     ],
-    status:0 //大于0 的时候需要弹出登录窗口
+    status:0, //大于0 的时候需要弹出登录窗口
+    token:"",
   },
   getters: {
     // getters相当于组件的计算属性，它与state相关，当它所关系的state变量发生变化时，会自动重新计算
@@ -34,7 +35,10 @@ export default new Vuex.Store({
       }else{
         state.status = 0
       }
-    }
+    },
+    // set_token(state,payload){
+
+    // }
   },
   actions: {
     // actions是专门与后端api打交道的，异步任务;提交的是 mutation，而不是直接变更状态;可以包含任意异步操作。

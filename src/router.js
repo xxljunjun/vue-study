@@ -10,7 +10,6 @@ let routes = []
 arr.map(ele=>{
   routes = [...routes, ...ele.arr]
 })
-console.log("0000000",routes)
 
 // 路由系统，用于实现单页面应用程序
 export default new VueRouter({

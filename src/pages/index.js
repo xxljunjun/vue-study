@@ -219,4 +219,14 @@ const routes = [
   }
 ]
 
+//路由守卫
+// routes.beforeEach((to, from, next) => {
+//   let token = localStorage.getItem("token")
+//     if (token) {
+//       next()
+//     } else {
+//       next("/login")
+//     }
+// })
+
 export default routes

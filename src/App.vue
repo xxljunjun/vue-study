@@ -13,16 +13,26 @@
 <script>
 
 import {  QfLayout } from '@/components/'
+import {mapState} from "vuex"
 
 export default {
   name: 'App2',
   components: {
     QfLayout,
   },
+  computed:{
+    ...mapState(["token"]),
+  },
   data: function() {
     return {
-      foo: 'hello foo'
+      foo: 'hello foo',
+      isLogin:false,
     }
+  },
+  mounted(){
+    // if(token){
+    //   this.isLogin = true
+    // }
   },
   // 监听路由的变化
   watch: {

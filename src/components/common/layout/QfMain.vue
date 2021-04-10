@@ -9,7 +9,15 @@
     </div>
     <!-- 关闭所有 -->
     <div class="close_All">
-      
+      <el-dropdown  @command="handleCommand">
+        <span class="el-dropdown-link">
+          下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item command="a">关闭其他标签</el-dropdown-item>
+          <el-dropdown-item command="b">关闭所有标签</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
     </div>
   </div>
   <!-- 视图容器 -->
@@ -67,6 +75,22 @@ export default {
     },
     toCurrent_router(val){
       this.$router.push({path:val})
+    },
+    handleCommand(command){
+      if(command === "a"){
+        //关闭其他
+        let currentVal = {
+          name:this.$route.name,
+          path:this.$route.fullPath
+        }
+        this.routerArr = this.routerArr.filter(item=>{
+          return item.path == currentVal.path
+        })
+      }else if(command === "b"){
+        //关闭所有
+        this.$router.push({path:"/"})
+        this.routerArr = []
+      }
     }
   },
   mounted(){
@@ -115,10 +139,17 @@ export default {
   }
   .close_All{
     position: absolute;
-    right: 0;
+    right: 100px;
   }
   .blue_box{
     background: #545c64;
   }
 }
+ .el-dropdown-link {
+    cursor: pointer;
+    color: #409EFF;
+  }
+  .el-icon-arrow-down {
+    font-size: 12px;
+  }
 </style>
