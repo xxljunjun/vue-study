@@ -8,6 +8,10 @@
   <button @click="eventbusthing" class="btn">eventbus兄弟组件通信</button> 
   <router-link :to="{ path: '/login'}" replace>跳转登录页面</router-link>
   <button @click="toMaxMull" class="btnall">点我全屏</button>
+  <!-- 你有几条未读的消息 -->
+   <el-tooltip class="item" effect="dark" content="你有两条未读消息" placement="bottom">
+    <el-badge is-dot class="item" title="你在干嘛">有人打电话给你了</el-badge>
+  </el-tooltip>
   <!-- 模拟登录弹窗 -->
   <el-dialog
       title="提示"
@@ -128,5 +132,10 @@ export default {
     margin-left: 20px;
     cursor: pointer;
   }
+}
+.item{
+  line-height: 30px;
+  margin-left: 20px;
+  cursor: pointer;
 }
 </style>
