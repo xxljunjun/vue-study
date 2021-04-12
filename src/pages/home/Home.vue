@@ -8,7 +8,9 @@
       <el-step title="步骤 2"></el-step>
     </el-steps>
     <div class="step_1" v-if="this.active==1">
-      <Step1/>
+      <Step1 
+        :stepNum.sync="stepNum"
+      />
     </div>
     <div class="step_2" v-else>
       <Step2/>
@@ -41,7 +43,8 @@ export default {
   data() {
     return {
       pingleiArr:["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
-      active: 1
+      active: 1,
+      stepNum:1,
     };
   },
   components: {
@@ -57,6 +60,9 @@ export default {
     next(){
       console.log(this.active)
        if (this.active++ > 1) this.active = 1;
+    },
+    tochangs(){
+      this.stepNum++
     },
     initEchart() {
       // 基于准备好的dom，初始化echarts实例

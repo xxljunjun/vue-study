@@ -27,6 +27,19 @@ Vue.mixin({
   }
 })
 
+var version = Number(Vue.version.split('.')[0])
+
+if (version === 2) {
+  // console.log("11111111")
+  // Vue v2.x.x
+} else if (version === 1) {
+  // console.log("2222222")
+  // Vue v1.x.x
+} else {
+  // Unsupported versions of Vue
+  // console.log("33333333")
+}
+
 //事件总线通信
 const eventBus = new Vue()
 Vue.prototype.$eventBus = eventBus
