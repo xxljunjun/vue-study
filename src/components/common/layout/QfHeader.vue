@@ -13,6 +13,7 @@
       title="提示"
       :visible.sync="dialogVisible"
       width="30%"
+      v-dialogDrag
     >
     <span>这是一段信息</span>
     <span slot="footer" class="dialog-footer">

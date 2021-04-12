@@ -8,6 +8,7 @@ import http from '@/utils/api'
 import img from '@/utils/img'
 // import i18n from './i18n/i18n'
 import 'element-ui/lib/theme-chalk/index.css'
+import "@/components/common/directives.js"
 
 Vue.use(ElementUI)
 Vue.prototype.$http = http
