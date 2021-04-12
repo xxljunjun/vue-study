@@ -7,6 +7,7 @@
   </span>
   <button @click="eventbusthing" class="btn">eventbus兄弟组件通信</button> 
   <router-link :to="{ path: '/login'}" replace>跳转登录页面</router-link>
+  <button @click="toMaxMull" class="btnall">点我全屏</button>
   <!-- 模拟登录弹窗 -->
   <el-dialog
       title="提示"
@@ -30,6 +31,7 @@ export default {
       msg:"1111111",
       dialogVisible: false,
       event_number:10,
+      fullscreen: false
     }
   },
   watch:{
@@ -79,6 +81,33 @@ export default {
     },
     eventbusthing(){
       this.event_number++
+    },
+    toMaxMull(){
+      //screenfull的插件也能实现
+      let element = document.documentElement;
+      if (this.fullscreen) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      } else {
+        if (element.requestFullscreen) {
+          element.requestFullscreen();
+        } else if (element.webkitRequestFullScreen) {
+          element.webkitRequestFullScreen();
+        } else if (element.mozRequestFullScreen) {
+          element.mozRequestFullScreen();
+        } else if (element.msRequestFullscreen) {
+          // IE11
+          element.msRequestFullscreen();
+        }
+      }
+      this.fullscreen = !this.fullscreen;
     }
   }
 }
@@ -89,9 +118,14 @@ export default {
   color: #000;
   .btn{
     margin-right: 20px;
+    cursor: pointer;
   }
   .box{
     margin-right: 20px;
+  }
+  .btnall{
+    margin-left: 20px;
+    cursor: pointer;
   }
 }
 </style>
