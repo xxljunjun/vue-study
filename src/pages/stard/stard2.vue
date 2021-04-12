@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<h1>测试ref组件通信</h1>
+		<h1>测试ref组件通信-------------局部混入特性</h1>
+		<h1>{{this.mixiNum}}</h1>
 		<h1 v-text="fu"></h1>
 		<Zi ref="zi"/>
 		<div class="cover">
@@ -11,14 +12,17 @@
 
 <script>
 import Zi from "./components/zi.vue"
+import {mymixin} from "@/components/mixin"  //局部混入方法和data
 	export default {
 		data(){
 			return{
 				fu:"我是父组件的值"
 			}
 		},
+		mixins:[mymixin],
 		mounted(){
 			// console.log(this.$refs.da)
+			this.todoSome()
 			this.fu = this.$refs.zi.da
 			this.$refs.zi.zifangfa()
 			

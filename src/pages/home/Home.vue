@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <div id="main"></div>
+    <div>{{this.mainNum}}</div>
     <div id="main_1"></div>
     <el-steps :active="active" finish-status="success">
       <el-step title="步骤 1"></el-step>

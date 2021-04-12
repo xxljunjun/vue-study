@@ -12,7 +12,20 @@ import "@/components/common/directives.js"
 Vue.use(ElementUI)
 Vue.prototype.$http = http
 Vue.prototype.$img = img
-Vue.config.productionTip = false
+
+//全局混入
+Vue.mixin({
+  data(){
+    return{
+      mainNum:1,
+    }
+  },
+  methodes:{
+    mainConsole(){
+      console.log("main.js打印的")
+    }
+  }
+})
 
 //事件总线通信
 const eventBus = new Vue()
