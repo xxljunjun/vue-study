@@ -24,8 +24,8 @@
 		},
 		methods:{
 			changNum(){
-				// this.$emit("changeNum")
 				this.$emit("update:stepNum",22)
+				// this.$emit("setNum")
 			}
 		}
 	}

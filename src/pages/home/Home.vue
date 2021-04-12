@@ -10,6 +10,7 @@
     <div class="step_1" v-if="this.active==1">
       <Step1 
         :stepNum.sync="stepNum"
+        @setNum="tochangs"
       />
     </div>
     <div class="step_2" v-else>
@@ -53,7 +54,6 @@ export default {
   },
   mounted() {
     this.initEchart();
-    this.data()
     this.initEchart_1()
   },
   methods: {
