@@ -8,6 +8,8 @@ import http from '@/utils/api'
 import img from '@/utils/img'
 import 'element-ui/lib/theme-chalk/index.css'
 import "@/components/common/directives.js"
+import messagebox from '@/utils/my-element/validate'
+Vue.prototype.$MessageBox = messagebox
 
 Vue.use(ElementUI)
 Vue.prototype.$http = http
