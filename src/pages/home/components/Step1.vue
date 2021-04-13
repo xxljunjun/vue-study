@@ -1,6 +1,8 @@
 <template>
 	<div>
-		<h1>{{this.stepNum}}</h1>
+		<h1>{{stepNum}}</h1>
+		<h2>{{resmsg}}</h2>
+		<input type="text" v-model="msg">
 		<button @click="changNum">点我改变</button>
 	</div>
 </template>
@@ -9,7 +11,7 @@
 	export default {
 		data(){
 			return{
-
+				msg:"我是一个潇洒洒脱的浪里个浪"
 			}
 		},
 		props:{
@@ -17,6 +19,19 @@
 				type:Number,
 				default:0,
 				requiiired:true
+			}
+		},
+		watch:{
+			'msg':(newval,oldval)=>{
+				console.log(newval)
+				console.log(oldval)
+			},
+			deep:true,
+			Immediate:true
+		},
+		computed:{
+			resmsg:function(){
+				return this.msg+"加上我就是你了"
 			}
 		},
 		components:{
