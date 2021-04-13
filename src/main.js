@@ -10,6 +10,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import "@/components/common/directives.js"
 import messagebox from '@/utils/my-element/validate'
 Vue.prototype.$MessageBox = messagebox
+import '@/styles/element-variables.scss'
 
 Vue.use(ElementUI)
 Vue.prototype.$http = http
