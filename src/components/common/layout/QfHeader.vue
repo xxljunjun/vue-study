@@ -17,6 +17,7 @@
     </el-tooltip>
     <button @click="toMesssage" class="btn">点我弹出消息提示</button>
     <button @click="toDialog" class="btn">点我弹出二次封装的dialog</button>
+    <button @click="toAhide" class="btn">点我导航缩放</button>
     <!-- 模拟登录弹窗 -->
     <el-dialog
       title="提示"
@@ -109,8 +110,12 @@ export default {
   destroyed() {
     EventBus.off("changeNum");
     this.$eventBus.$off("change");
+    this.$eventBus.$off("changeLarge")
   },
   methods: {
+    toAhide(){
+      this.$eventBus.$emit("changeLarge")
+    },
     toDialog(){
       this.dialogVisible = true
     },
@@ -132,7 +137,7 @@ export default {
       this.dialogVisible = false;
     },
     toMesssage() {
-      this.$MessageBox.MessageBoxError();
+      this.$MessageBox.MessageInfo();
     },
     out() {
       console.log("点我");

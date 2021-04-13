@@ -9,6 +9,8 @@
     :unique-opened='true'
     active-text-color="#ffd04b"
     @select="chooseSome"
+    mode="vertical"
+    :collapse="isCollapse"
   >
     <!-- 一层循环 -->
     <el-submenu v-for='group in routes' :key='group.id' :index="group.id+''">
@@ -35,17 +37,23 @@ import routes from '@/pages/'
 export default {
   data: function() {
     return {
-      routes
+      routes,
+      isCollapse:false
     }
   },
   mounted(){
-    console.log("routes",this.routes)
+    this.$eventBus.$on("changeLarge",()=>{
+        this.isCollapse = !this.isCollapse
+    })
+  },
+  destroyed(){
+    this.$eventBus.$off("changeLarge")
   },
   methods:{
     chooseSome(index,indexPath){
       console.log("index",index)
       console.log("indexPath",indexPath)
-    }
+    },
   }
 }
 </script>
@@ -76,9 +84,9 @@ export default {
   }
 }
 .el-menu-item {
-  min-width: 150px;
+  // min-width: 150px;
 }
 .el-submenu {
-  width: 150px;
+  // width: 150px;
 }
 </style>

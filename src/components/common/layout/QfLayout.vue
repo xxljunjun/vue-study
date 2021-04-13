@@ -1,12 +1,9 @@
 <template>
 <div class="qf-layout">
-
   <el-container>
-
-    <el-aside width="150px">
+    <el-aside :width="width">
       <QfAside></QfAside>
     </el-aside>
-
     <el-container class="qf-container">
         <el-header height='60px'>
           <QfHeader></QfHeader>
@@ -21,6 +18,23 @@
 
 <script>
 export default {
+  data(){
+    return{
+      width:"150px"
+    }
+  },
+  mounted(){
+    this.$eventBus.$on("changeLarge",()=>{
+      if(this.width === "150px"){
+        this.width = "60px"
+      }else{
+        this.width = "150px"
+      }
+    })
+  },
+  destroyed(){
+    this.$eventBus.$off("changeLarge")
+  },
   components: {
     QfAside: ()=>import('./QfAside.vue'),
     QfHeader: ()=>import('./QfHeader.vue'),

@@ -19,21 +19,27 @@ export function MessageError(text = '错误',) {
   Message({
     message: text,
     type: 'error',
-    duration: 3 * 1000
+    duration: 3 * 1000,
+    center: true,
+    offset: 350,
   })
 }
 export function MessageInfo(text = '取消') {
   Message({
     message: text,
     type: 'info',
-    duration: 3 * 1000
+    duration: 3 * 1000,
+    center: true,
+    offset: 350,
   })
 }
 export function MessageSuccess(text = '成功') {
   Message({
     message: text,
     type: 'success',
-    duration: 3 * 1000
+    duration: 3 * 1000,
+    center: true,
+    offset: 350,
   })
 }
 
@@ -41,7 +47,9 @@ export function MessageWarning(text = '警告') {
   Message({
     message: text,
     type: 'warning',
-    duration: 3 * 1000
+    duration: 3 * 1000,
+    center: true,
+    offset: 350,
   })
 }
 
