@@ -3,28 +3,20 @@
     <h1>如何使用插槽</h1>
     <p>插槽可以放置什么内容</p>
     <p>默认插槽</p>
-    <p>具民插槽</p>
+    <p>具名插槽</p>
     <p>作用域插槽</p>
+	<p>Vue2.6.0的更新，废弃了slot，新增了v-slot</p>
     <childenSlot :lists="nameList">
-      <!-- 插槽就是Vue实现的一套内容分发的API，将元素作为承载分发内容的出口。
-			<template slot="girl" slot-scope="a">
-				漂亮、美丽、购物、逛街
-				{{a.say}}
-				{{a.h}}
-				{{a.kk}}
-			</template>
-			<template slot="boy">
-				帅气、才实
-			</template> -->
-      <template slot-scope="b" slot="array_1">
-        {{ b }}
-        <div v-if="b.bbbbb.id == 1">
-          你好：<span>{{ b.bbbbb.name }}</span>
-        </div>
-        <div v-else>
-			<button>{{ b.bbbbb.name }}</button>
-		</div>
-      </template>
+		【2.6.0起，v-slot取代了slot和slot-scope】
+		<template v-slot:header>
+			<div class="box">
+				我是子组件标签内的内容，而且还是有名字的，我被称为具名插槽
+			</div>
+		</template>
+		<!--slotProps可以使任意名字-->
+        <template v-slot:main="slotProps">
+            <strong style="color: crimson">{{slotProps.user.firstName}}</strong>
+        </template>
     </childenSlot>
   </div>
 </template>
