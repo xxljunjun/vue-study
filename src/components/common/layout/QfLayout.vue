@@ -88,7 +88,7 @@ export default {
   .qf-main {
     box-sizing: border-box;
     // padding: 20px;
-    background-color: white;
+    // background-color: white;
     min-width: 900px;
     padding-bottom: 50px;
   }

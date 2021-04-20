@@ -19,6 +19,7 @@ const stard3 = ()=>import('./stard/stard3.vue')
 //vue的学习模块
 const Studyvue = ()=>import("./studyvue/studyvue.vue")
 const Slot = ()=>import("./studyvue/slot.vue")
+const lili = ()=>import("./studyvue/lili.vue")
 
 
 // import { FindPanelA, FindPanelB } from '../components/'
@@ -222,7 +223,15 @@ const routes = [
         name: '插槽的学习',
         path: '/slot',
         component: Slot
+      },
+      {
+        id: 1603,
+        text: 'lili后台',
+        name: 'lili后台',
+        path: '/lili',
+        component: lili
       }
+      
     ]
   }
 ]

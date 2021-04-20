@@ -122,6 +122,7 @@ export default {
   flex-direction: row;
   align-items: center;
   position: relative;
+  background: #eee;
   .router_box{
     display: inline-block;
     width: 100px;
