@@ -1,5 +1,8 @@
 <template>
-  <div class="xxl_childerPro">
+  <div>
+    <button @click="toLearn">点我尝试学习sync</button>
+  </div>
+  <!-- <div class="xxl_childerPro">
     <h1 v-text="propA"></h1>
     <h1 v-text="propB"></h1>
     <h1 v-if="propC">默认我是看不见的</h1>
@@ -9,64 +12,65 @@
     </h1>
     <h1 v-text="propF"></h1>
     <span class="“btn”" @click="btnThing">点我！</span>
-  </div>
+  </div> -->
 </template>
 
 <script>
+//什么时候用sync？在子组件只想改变父组件的某一种状态时，可以用sync修饰符的简单写法
 export default {
-  data: function() {
+  data: function () {
     return {
-      childpropE:[],
-      myNumber:1314941
+      childpropE: [],
+      myNumber: 1314941,
     }
   },
-  watch:{
-
+  watch: {},
+  props: {
+    // //必须是数字类型
+    // propA:Number,
+    // //数字类型或者字符串
+    // propB:[Number,String],
+    // //布尔值，如果没有定义，默认值就是true
+    // propC:{
+    //   type:Boolean,
+    //   dafault:false
+    // },
+    // //数字，而且是必传
+    // propD:{
+    //   type:Number,
+    //   requiiired:true
+    // },
+    // //如果数组或对象，默认值必须是一个函数来返回
+    // propE:{
+    //   type:Array,
+    //   default:()=>{
+    //     return [1,2,3]
+    //   }
+    // },
+    // //自定义一个验证函数
+    // propF:{
+    //   validator:(val)=>{
+    //     return val>10
+    //   }
+    // }
   },
-  props:{
-    //必须是数字类型
-    propA:Number,
-    //数字类型或者字符串
-    propB:[Number,String],
-    //布尔值，如果没有定义，默认值就是true
-    propC:{
-      type:Boolean,
-      dafault:false
-    },
-    //数字，而且是必传
-    propD:{
-      type:Number,
-      requiiired:true
-    },
-    //如果数组或对象，默认值必须是一个函数来返回
-    propE:{
-      type:Array,
-      default:()=>{
-        return [1,2,3]
-      }
-    },
-    //自定义一个验证函数
-    propF:{
-      validator:(val)=>{
-        return val>10
-      }
-    }
-
-  },
-  computed: {
-    
-  },
+  computed: {},
   mounted() {
-    console.log("0000000",this.propA)
-    console.log("11111111111",this.propB)
-    console.log("22222222",this.propC)
-    console.log("33333333",this.propD)
-    console.log("4444444",this.propE)
-    console.log("5555555",this.propF)
-    this.childpropE = this.propE
-    console.log("66666666",this.childpropE)
+    // console.log("0000000",this.propA)
+    // console.log("11111111111",this.propB)
+    // console.log("22222222",this.propC)
+    // console.log("33333333",this.propD)
+    // console.log("4444444",this.propE)
+    // console.log("5555555",this.propF)
+    // this.childpropE = this.propE
+    // console.log("66666666",this.childpropE)
   },
-  methods: {}
+  methods: {
+    toLearn() {
+      console.log('1111111111')
+      this.$emit('update:isShow', false)
+    },
+  },
 }
 </script>
 
