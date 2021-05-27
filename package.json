@@ -15,11 +15,13 @@
     "echarts": "^5.0.2",
     "element-ui": "^2.14.0",
     "less-loader": "^4.1.0",
+    "sortablejs": "^1.13.0",
     "swiper": "^6.6.2",
     "vue": "^2.6.11",
     "vue-i18n": "^9.1.2",
     "vue-router": "^3.4.9",
-    "vuex": "^3.5.1"
+    "vuex": "^3.5.1",
+    "wangeditor": "^4.7.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

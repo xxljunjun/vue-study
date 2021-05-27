@@ -22,6 +22,8 @@ const Slot = () => import("./studyvue/slot.vue")
 const lili = () => import("./studyvue/lili.vue")
 const animate = () => import("./studyvue/animate.vue")
 const mySwiper = () => import("./studyvue/mySwiper.vue")
+const editor = () => import("./studyvue/editor.vue")
+const drag = () => import("./studyvue/drag.vue")
 
 
 // import { FindPanelA, FindPanelB } from '../components/'
@@ -246,6 +248,20 @@ const routes = [
         name: '轮播图',
         path: '/mySwiper',
         component: mySwiper
+      },
+      {
+        id: 1606,
+        text: '编辑器',
+        name: '编辑器',
+        path: '/editor',
+        component: editor
+      },
+      {
+        id: 1607,
+        text: '拖拽',
+        name: '拖拽',
+        path: '/drag',
+        component: drag
       }
     ]
   }
