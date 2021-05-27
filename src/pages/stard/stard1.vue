@@ -1,7 +1,8 @@
 <template>
   <div class="stard1">
-    <h1>测试</h1>
+    <h1>scrollIntoView()或者scrollTo()来实现类似点餐功能</h1>
     <div class="demo">
+      <!-- ABCDEFGHJK -->
       <div class="left">
         <p
           v-for="item in lettersArr"
@@ -13,10 +14,16 @@
           {{ item.Letters }}
         </p>
       </div>
+      <!-- 对应的内容 -->
       <div class="right">
         <div v-for="item in messageArr" :key="item.id">
           <p class="zimu" :class="'make-' + item.zimu">{{ item.zimu }}</p>
-          <p v-for="(item1, index) in item.data" :key="index" class="data" @click="choosedata">
+          <p
+            v-for="(item1, index) in item.data"
+            :key="index"
+            class="data"
+            @click="choosedata"
+          >
             {{ item1 }}
           </p>
         </div>
@@ -30,97 +37,109 @@ export default {
   data() {
     return {
       lettersArr: [
-        { id: 0, Letters: "A" },
-        { id: 1, Letters: "B" },
-        { id: 2, Letters: "C" },
-        { id: 3, Letters: "D" },
-        { id: 4, Letters: "E" },
-        { id: 5, Letters: "F" },
-        { id: 6, Letters: "G" },
-        { id: 7, Letters: "H" },
+        { id: 0, Letters: 'A' },
+        { id: 1, Letters: 'B' },
+        { id: 2, Letters: 'C' },
+        { id: 3, Letters: 'D' },
+        { id: 4, Letters: 'E' },
+        { id: 5, Letters: 'F' },
+        { id: 6, Letters: 'G' },
+        { id: 7, Letters: 'H' },
       ],
       messageArr: [
         {
           id: 0,
-          zimu: "A",
-          data: ["模拟数据1", "模拟数据2", "模拟数据3", "模拟数据4"],
+          zimu: 'A',
+          data: ['模拟数据1', '模拟数据2', '模拟数据3', '模拟数据4'],
         },
         {
           id: 1,
-          zimu: "B",
-          data: ["模拟数据1", "模拟数据2", "模拟数据3", "模拟数据4"],
+          zimu: 'B',
+          data: ['模拟数据1', '模拟数据2', '模拟数据3', '模拟数据4'],
         },
         {
           id: 2,
-          zimu: "C",
-          data: ["模拟数据1", "模拟数据2", "模拟数据3", "模拟数据4"],
+          zimu: 'C',
+          data: ['模拟数据1', '模拟数据2', '模拟数据3', '模拟数据4'],
         },
         {
           id: 3,
-          zimu: "D",
-          data: ["模拟数据1", "模拟数据2", "模拟数据3", "模拟数据4"],
+          zimu: 'D',
+          data: ['模拟数据1', '模拟数据2', '模拟数据3', '模拟数据4'],
         },
         {
           id: 4,
-          zimu: "E",
-          data: ["模拟数据1", "模拟数据2", "模拟数据3", "模拟数据4"],
+          zimu: 'E',
+          data: ['模拟数据1', '模拟数据2', '模拟数据3', '模拟数据4'],
         },
         {
           id: 5,
-          zimu: "F",
-          data: ["模拟数据1", "模拟数据2", "模拟数据3", "模拟数据4"],
+          zimu: 'F',
+          data: ['模拟数据1', '模拟数据2', '模拟数据3', '模拟数据4'],
         },
         {
           id: 6,
-          zimu: "G",
-          data: ["模拟数据1", "模拟数据2", "模拟数据3", "模拟数据4"],
+          zimu: 'G',
+          data: ['模拟数据1', '模拟数据2', '模拟数据3', '模拟数据4'],
         },
         {
           id: 7,
-          zimu: "H",
-          data: ["模拟数据1", "模拟数据2", "模拟数据3", "模拟数据4"],
+          zimu: 'H',
+          data: ['模拟数据1', '模拟数据2', '模拟数据3', '模拟数据4'],
         },
       ],
-      activeLetters: "",
-    };
+      activeLetters: '',
+    }
   },
   components: {},
   watch: {},
   methods: {
     clickzimu(value) {
-      // console.log(this.$el)
-      this.activeLetters = value;
-      let selector = ".make-" + value;
+      this.activeLetters = value
+      let selector = '.make-' + value
+
+      //方法一scrollIntoView
       this.$el.querySelector(selector).scrollIntoView({
-        behavior: "smooth", // 平滑过渡
-        block: "nearest",
-      });
+        behavior: 'smooth', // 平滑过渡
+        block: 'nearest',
+      })
+      //利用scrollIntoView方法和动态class类名来实现点击滑动到相应的标签
+
+      //方法二scrollTo
+      // console.log(PageId)
+      // console.log(PageId.offsetTop)
+      // var PageId = document.querySelector('.make-' + value)
+      // window.scrollTo({
+      //   top: PageId.offsetTop,
+      //   behavior: 'smooth',
+      // })
     },
-    choosedata(){
-      console.log("1")
-    }
+    choosedata() {
+      console.log('1')
+    },
   },
   created() {},
   mounted() {
-    let parentTop = document.querySelector(".right").getBoundingClientRect()
-      .top; //获取某个元素相对于视窗的位置集合,这里的值是不变的200
-    const that = this;
-    document.querySelector(".right").addEventListener("scroll", () => {
+    let parentTop = document.querySelector('.right').getBoundingClientRect().top //获取某个元素相对于视窗的位置集合,这里的值是不变的200
+    const that = this
+    document.querySelector('.right').addEventListener('scroll', () => {
       for (let i = 0; i < that.messageArr.length; i++) {
-        let letter = that.messageArr[i].zimu;
+        let letter = that.messageArr[i].zimu
+
         let top = document
-          .querySelector(".make-" + letter)
-          .getBoundingClientRect().top;
-        let distance = top - parentTop;
+          .querySelector('.make-' + letter)
+          .getBoundingClientRect().top
+
+        let distance = top - parentTop
         if (distance >= 0) {
-          that.activeLetters = letter;
+          that.activeLetters = letter
           //break完全结束循环，continue终止本次循环
-          break;
+          break
         }
       }
-    });
+    })
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -168,7 +187,7 @@ p {
       line-height: 30px;
       cursor: pointer;
     }
-    .select{
+    .select {
       color: red;
       border-bottom: 1px solid red;
     }
