@@ -1,25 +1,27 @@
 
 // 路由懒加载：使用webpack代码分割功能和异步组件的特点来实现，目的性能优化。
-const Home = ()=>import('./home/Home.vue')
-const User = ()=>import('./user/User.vue')
-const Find = ()=>import('./home/Find.vue')
-const MusicList = ()=>import('./music/MusicList.vue')
-const MusicDetail = ()=>import('./music/MusicDetail.vue')
-const Todo = ()=>import('./home/Todo.vue')
-const GoodList = ()=>import('./good/GoodList.vue')
-const GoodAdd = ()=>import('./good/GoodAdd.vue')
+const Home = () => import('./home/Home.vue')
+const User = () => import('./user/User.vue')
+const Find = () => import('./home/Find.vue')
+const MusicList = () => import('./music/MusicList.vue')
+const MusicDetail = () => import('./music/MusicDetail.vue')
+const Todo = () => import('./home/Todo.vue')
+const GoodList = () => import('./good/GoodList.vue')
+const GoodAdd = () => import('./good/GoodAdd.vue')
 
 // 广告中心模块
-const Ad = ()=>import('./center/Ad.vue')
-const stard = ()=>import('./stard/stard.vue')
-const stard1 = ()=>import('./stard/stard1.vue')
-const stard2 = ()=>import('./stard/stard2.vue')
-const stard3 = ()=>import('./stard/stard3.vue')
+const Ad = () => import('./center/Ad.vue')
+const stard = () => import('./stard/stard.vue')
+const stard1 = () => import('./stard/stard1.vue')
+const stard2 = () => import('./stard/stard2.vue')
+const stard3 = () => import('./stard/stard3.vue')
 
 //vue的学习模块
-const Studyvue = ()=>import("./studyvue/studyvue.vue")
-const Slot = ()=>import("./studyvue/slot.vue")
-const lili = ()=>import("./studyvue/lili.vue")
+const Studyvue = () => import("./studyvue/studyvue.vue")
+const Slot = () => import("./studyvue/slot.vue")
+const lili = () => import("./studyvue/lili.vue")
+const animate = () => import("./studyvue/animate.vue")
+const mySwiper = () => import("./studyvue/mySwiper.vue")
 
 
 // import { FindPanelA, FindPanelB } from '../components/'
@@ -49,7 +51,7 @@ const routes = [
         path: '/',
         component: Home,
         text: '首页概况',
-        name:"首页概况",
+        name: "首页概况",
         exact: true
         // 【命名视图】当访问首页时，使用一个叫abc的视图容器来承载Home组件
         // components: {
@@ -64,7 +66,7 @@ const routes = [
         component: Find,
         text: '公司新闻',
         exact: false,
-        name:"公司新闻",
+        name: "公司新闻",
         // 嵌套视图
         // children: [
         //   { path: '', component: FindPanelA },   // /find/
@@ -78,7 +80,7 @@ const routes = [
         id: 1003,
         text: 'TodoList',
         path: '/todo',
-        name:"TodoList",
+        name: "TodoList",
         component: Todo,
         exact: true
       }
@@ -88,7 +90,7 @@ const routes = [
     id: 11,
     text: '系统管理',
     icon: 'el-icon-setting',
-    name:"系统管理",
+    name: "系统管理",
     arr: [
       {
         id: 1101,
@@ -230,8 +232,21 @@ const routes = [
         name: 'lili后台',
         path: '/lili',
         component: lili
+      },
+      {
+        id: 1604,
+        text: '动画学习',
+        name: '动画学习',
+        path: '/animate',
+        component: animate
+      },
+      {
+        id: 1605,
+        text: '轮播图',
+        name: '轮播图',
+        path: '/mySwiper',
+        component: mySwiper
       }
-      
     ]
   }
 ]

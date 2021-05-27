@@ -11,20 +11,22 @@ import "@/components/common/directives.js"
 import messagebox from '@/utils/my-element/validate'
 Vue.prototype.$MessageBox = messagebox
 import '@/styles/element-variables.scss'
+import animated from 'animate.css'
 
+Vue.use(animated)
 Vue.use(ElementUI)
 Vue.prototype.$http = http
 Vue.prototype.$img = img
 
 //全局混入
 Vue.mixin({
-  data(){
-    return{
-      mainNum:1,
+  data() {
+    return {
+      mainNum: 1,
     }
   },
-  methodes:{
-    mainConsole(){
+  methodes: {
+    mainConsole() {
       console.log("main.js打印的")
     }
   }
