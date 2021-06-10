@@ -24,6 +24,7 @@ const animate = () => import("./studyvue/animate.vue")
 const mySwiper = () => import("./studyvue/mySwiper.vue")
 const editor = () => import("./studyvue/editor.vue")
 const drag = () => import("./studyvue/drag.vue")
+const donghua = () => import("./studyvue/donghua.vue")
 
 
 // import { FindPanelA, FindPanelB } from '../components/'
@@ -262,6 +263,13 @@ const routes = [
         name: '拖拽',
         path: '/drag',
         component: drag
+      },
+      {
+        id: 1608,
+        text: '动画',
+        name: '动画',
+        path: '/donghua',
+        component: donghua
       }
     ]
   }
