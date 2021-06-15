@@ -12,7 +12,9 @@ import messagebox from '@/utils/my-element/validate'
 Vue.prototype.$MessageBox = messagebox
 import '@/styles/element-variables.scss'
 import animated from 'animate.css'
+import JsonExcel from 'vue-json-excel'  //导出excel表格
 
+Vue.component('downloadExcel', JsonExcel)
 Vue.use(animated)
 Vue.use(ElementUI)
 Vue.prototype.$http = http

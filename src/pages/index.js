@@ -1,11 +1,15 @@
 
 // 路由懒加载：使用webpack代码分割功能和异步组件的特点来实现，目的性能优化。
+
+//首页概况
 const Home = () => import('./home/Home.vue')
-const User = () => import('./user/User.vue')
 const Find = () => import('./home/Find.vue')
+const Todo = () => import('./home/Todo.vue')
+const excel = () => import("./home/excel.vue")
+
+const User = () => import('./user/User.vue')
 const MusicList = () => import('./music/MusicList.vue')
 const MusicDetail = () => import('./music/MusicDetail.vue')
-const Todo = () => import('./home/Todo.vue')
 const GoodList = () => import('./good/GoodList.vue')
 const GoodAdd = () => import('./good/GoodAdd.vue')
 
@@ -85,6 +89,14 @@ const routes = [
         path: '/todo',
         name: "TodoList",
         component: Todo,
+        exact: true
+      },
+      {
+        id: 1004,
+        text: '导出excel',
+        path: '/excel',
+        name: "导出excel",
+        component: excel,
         exact: true
       }
     ]
