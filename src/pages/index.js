@@ -34,6 +34,7 @@ const donghua = () => import("./studyvue/donghua.vue")
 const apiFunction = () => import("./reviewVue/index.vue")
 const myMine = () => import("./reviewVue/myMine.vue")
 const selfInstruction = () => import("./reviewVue/selfInstruction.vue")
+const mynextTick = () => import("./reviewVue/mynextTick.vue")
 
 // import { FindPanelA, FindPanelB } from '../components/'
 
@@ -313,6 +314,12 @@ const routes = [
         name: '自定义指令',
         path: '/selfInstruction',
         component: selfInstruction
+      }, {
+        id: 1704,
+        text: '异步nextTic',
+        name: '异步nextTic',
+        path: '/mynextTick',
+        component: mynextTick
       }
     ]
   },
