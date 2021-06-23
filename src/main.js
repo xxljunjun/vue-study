@@ -20,6 +20,13 @@ Vue.use(ElementUI)
 Vue.prototype.$http = http
 Vue.prototype.$img = img
 
+
+Vue.filter('myFilter', function (value) {
+  return value + 1
+  // 返回处理后的值
+})
+
+
 //全局混入
 Vue.mixin({
   data() {

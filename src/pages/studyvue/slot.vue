@@ -41,6 +41,11 @@
     ==>作用域插槽
       +在父组件中(插槽props解构)
         <ChildenSlot v-slot:default="{ user }">{{ user.firstName }} </ChildenSlot>
+        <ChildenSlot >
+          <template v-slot:default="{ user }">
+              {{ user.firstName }} 
+          </template>
+        </ChildenSlot>
       +在子组件中
         <slot :user="user" >{{ user.lastName}}</slot>
 

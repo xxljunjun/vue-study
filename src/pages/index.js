@@ -32,6 +32,8 @@ const donghua = () => import("./studyvue/donghua.vue")
 
 //复习vue的学习模块
 const apiFunction = () => import("./reviewVue/index.vue")
+const myMine = () => import("./reviewVue/myMine.vue")
+const selfInstruction = () => import("./reviewVue/selfInstruction.vue")
 
 // import { FindPanelA, FindPanelB } from '../components/'
 
@@ -299,6 +301,18 @@ const routes = [
         name: '方法api',
         path: '/apiFunction',
         component: apiFunction
+      }, {
+        id: 1702,
+        text: '混入',
+        name: '混入',
+        path: '/myMine',
+        component: myMine
+      }, {
+        id: 1703,
+        text: '自定义指令',
+        name: '自定义指令',
+        path: '/selfInstruction',
+        component: selfInstruction
       }
     ]
   },
