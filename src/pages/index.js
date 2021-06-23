@@ -30,6 +30,8 @@ const editor = () => import("./studyvue/editor.vue")
 const drag = () => import("./studyvue/drag.vue")
 const donghua = () => import("./studyvue/donghua.vue")
 
+//复习vue的学习模块
+const apiFunction = () => import("./reviewVue/index.vue")
 
 // import { FindPanelA, FindPanelB } from '../components/'
 
@@ -284,7 +286,22 @@ const routes = [
         component: donghua
       }
     ]
-  }
+  },
+  {
+    id: 17,
+    text: '重温vue',
+    name: '重温vue',
+    icon: 'el-icon-goods',
+    arr: [
+      {
+        id: 1701,
+        text: '方法api',
+        name: '方法api',
+        path: '/apiFunction',
+        component: apiFunction
+      }
+    ]
+  },
 ]
 
 //路由守卫

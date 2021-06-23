@@ -62,5 +62,24 @@ new Vue({
   render: h => h(App),
   el: '#app'
 })
-
 // app.$mount('#app')
+
+// console.log("vue的配置", Vue.config)
+// console.log("vue的原型", Vue.prototype)
+
+// Vue.config.silent = true //取消 Vue 所有的日志与警告。
+
+/*
+  自定义合并策略的选项。
+合并策略选项分别接收在父实例和子实例上定义的该选项的值作为第一个和第二个参数，Vue 实例上下文被作为第三个参数传入。
+*/
+// Vue.config.optionMergeStrategies._my_option = function (parent, child, vm) {
+//   return child + 1
+// }
+// const Profile = Vue.extend({
+//   _my_option: 1
+// })
+
+// Vue.config.devtools = true //务必在加载 Vue 之后，立即同步设置以下内容
+
+// Vue.config.productionTip = false  // 阻止启动生产消息
