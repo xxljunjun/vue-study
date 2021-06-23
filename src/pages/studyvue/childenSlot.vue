@@ -1,36 +1,39 @@
 <template>
   <div class="childen">
-    <slot name="header"></slot>
-    <div>
-      <slot :user="userData" name="main"></slot>
-    </div>
+    <!-- <slot>22222222222</slot> -->
+    <!-- <slot name="header"></slot> -->
+    <slot v-bind:user="user">{{ user.lastName }}</slot>
+
+    <!-- <slot name="one">2222222222</slot>
+    <slot name="two">3333333333</slot> -->
   </div>
 </template>
 
 <script>
 export default {
-  data(){
-    return{
-      msg:1,
-      userData: {
-          firstName: 'AAA',
-          lastName: 'Miss'
-      }
+  components: {},
+  data() {
+    return {
+      msg: 1,
+      user: {
+        firstName: 'AAA',
+        lastName: 'Miss',
+      },
     }
   },
-  props:{
-    lists:{
-      type:Array,
-      default:()=>{
-				return [1,2,3]
-			},
-      require:true
-    }
+  props: {
+    lists: {
+      type: Array,
+      default: () => {
+        return [1, 2, 3]
+      },
+      require: true,
+    },
   },
-  mounted(){
-    console.log("父向子传值",this.lists)
-  }
-};
+  mounted() {
+    console.log('父向子传值', this.lists)
+  },
+}
 </script>
 
 <style lang="scss" scoped>

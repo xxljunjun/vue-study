@@ -1,15 +1,26 @@
 <template>
-  <div>vue3.0才支持swiper6.0</div>
+  <div>
+    <Son>
+      <template v-slot:todo="{ todo }">
+        <span v-if="todo.isComplete">✓</span>
+        {{ todo.text }}
+      </template>
+    </Son>
+  </div>
 </template>
 
 <script>
+import Son from './son/sonSlot.vue'
 export default {
   props: {},
   data() {
     return {}
   },
+  mounted() {},
   methods: {},
-  components: {},
+  components: {
+    Son,
+  },
 }
 </script>
 
