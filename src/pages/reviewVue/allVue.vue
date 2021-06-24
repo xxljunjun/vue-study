@@ -33,8 +33,18 @@ export default {
   components: {
     //局部注册组件
   },
-  render: function (createElement) {
-    //用js语言来构建DOM
+  render: (h) => {
+    //用js语言来构建DOM  createElement  h  _c  ---------都是别称
+    // createElement（params1，params2，params3）接受三个参数
+
+    /* 	
+	1. render方法的实质就是生成template模板； 
+	2. 通过调用一个方法来生成，而这个方法是通过render方法的参数传递给它的； 
+	3. 这个方法有三个参数，分别提供标签名，标签相关属性，标签内部的html内容 
+	4. 通过这三个参数，可以生成一个完整的木模板 
+	render方法可以使用JSX语法，但需要Babel plugin插件；
+	render方法里的第三个参数可以使用函数来生成多个组件（特别是如果他们相同的话），只要生成结果是一个数组，且数组元素都是VNode即可；
+	*/
     return 11
   },
   beforeCreate() {},
