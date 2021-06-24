@@ -35,6 +35,7 @@ export default {
   },
   render: function (createElement) {
     //用js语言来构建DOM
+    return 11
   },
   beforeCreate() {},
   created() {},
