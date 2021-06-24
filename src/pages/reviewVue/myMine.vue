@@ -1,5 +1,5 @@
 <template>
-  <div>11111111</div>
+  <div>1111111111111</div>
 </template>
 
 <script>
@@ -15,6 +15,7 @@ export default {
     return {}
   },
   mixins: [onemixine],
+  components: {},
   mounted() {
     console.log('打印混入里面的数据data', this.msg)
   },
