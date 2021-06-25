@@ -1,5 +1,8 @@
 <template>
-  <div>1111111111111</div>
+  <div>
+    1111111111111
+    <Child />
+  </div>
 </template>
 
 <script>
@@ -10,12 +13,20 @@
 	3、Vue.config.optionMergeStrategies，可以自定义混入
 */
 import onemixine from './components/onemixine.vue'
+import Child from './components/child.vue'
 export default {
+  provide() {
+    return {
+      val: '我是所有allVue组件中的数据',
+    }
+  },
   data() {
     return {}
   },
   mixins: [onemixine],
-  components: {},
+  components: {
+    Child,
+  },
   mounted() {
     console.log('打印混入里面的数据data', this.msg)
   },

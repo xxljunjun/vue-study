@@ -34,7 +34,7 @@ const donghua = () => import("./studyvue/donghua.vue")
 const apiFunction = () => import("./reviewVue/index.vue")
 const myMine = () => import("./reviewVue/myMine.vue")
 const selfInstruction = () => import("./reviewVue/selfInstruction.vue")
-const allVue = () => import("./reviewVue/allVue.vue")
+const all = () => import("./reviewVue/all.vue")
 
 // import { FindPanelA, FindPanelB } from '../components/'
 
@@ -318,8 +318,8 @@ const routes = [
         id: 1704,
         text: 'vue总',
         name: 'vue总',
-        path: '/allVue',
-        component: allVue
+        path: '/all',
+        component: all
       }
     ]
   },
