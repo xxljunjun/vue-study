@@ -1,7 +1,6 @@
 <template>
-  <div id="dynamicexample">
-    <h3>Scroll down inside this section ↓</h3>
-    <p v-pin:[direction]="600">I am pinned onto the page at 200px to the left.</p>
+  <div>
+    <input type="text" v-focus />
   </div>
 </template>
 
@@ -26,6 +25,9 @@ export default {
       direction: 'left'
     }
   },
+  mounted() {
+    console.log('11111', this.$data)
+  },
   directives: {
     focus: {
       // 指令的定义
@@ -34,6 +36,11 @@ export default {
         console.log(el)
         console.log(binding)
       },
+      // bind: function () {},
+      // inserted: function () {},
+      // update: function () {},
+      // componentUpdated: function () {},
+      // unbind: function () {},
     },
     pin:{
          bind: function (el, binding) {

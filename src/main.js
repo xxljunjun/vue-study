@@ -75,6 +75,11 @@ new Vue({
   store,
   // i18n,
   render: h => h(App),
+
+  // render: function (createElement) {
+  //   return createElement(App);
+  // },
+  //h的意思就是 Hyperscript
   el: '#app'
 })
 // app.$mount('#app')
