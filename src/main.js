@@ -26,6 +26,14 @@ Vue.filter('myFilter', function (value) {
   // 返回处理后的值
 })
 
+Vue.directive('my-directive', {
+  // 这里将会被 `bind` 和 `update` 调用
+  bind: function () {},
+  inserted: function () {},
+  update: function () {},
+  componentUpdated: function () {},
+  unbind: function () {}
+})
 
 //全局混入
 Vue.mixin({
