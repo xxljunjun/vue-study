@@ -59,6 +59,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  /*滚动条样式*/
+/deep/.el-menu::-webkit-scrollbar {
+  width:4px 
+  /*height: 4px;*/
+}
+/deep/.el-menu::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.2);
+}
+/deep/.el-menu::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 0;
+  background: rgba(0,0,0,0.1);
+}
+/deep/.el-menu {
+  overflow: auto;
+  height: 100%;
+  overflow-x:hidden
+}
+/deep/.el-submenu{
+  // overflow: auto;
+  // height: 100% ;
+}
 .qf-aside {
   background: rgba(84, 92, 100, 1);
   height: 100%;

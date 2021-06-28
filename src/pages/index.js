@@ -35,6 +35,11 @@ const apiFunction = () => import("./reviewVue/index.vue")
 const myMine = () => import("./reviewVue/myMine.vue")
 const selfInstruction = () => import("./reviewVue/selfInstruction.vue")
 const all = () => import("./reviewVue/all.vue")
+const mytransition = () => import("./reviewVue/mytransition.vue")
+const other = () => import("./reviewVue/other.vue")
+
+//新的测试学习模块
+const another = () => import("./ceshi/index.vue")
 
 // import { FindPanelA, FindPanelB } from '../components/'
 
@@ -320,9 +325,36 @@ const routes = [
         name: 'vue总',
         path: '/all',
         component: all
+      }, {
+        id: 1705,
+        text: '内置动画',
+        name: '内置动画',
+        path: '/mytransition',
+        component: mytransition
+      }, {
+        id: 1706,
+        text: '其他',
+        name: '其他',
+        path: '/other',
+        component: other
       }
     ]
   },
+  {
+    id: 18,
+    text: '测试',
+    name: '测试',
+    icon: 'el-icon-goods',
+    arr: [
+      {
+        id: 1801,
+        text: '超越',
+        name: '超越',
+        path: '/another',
+        component: another
+      },
+    ]
+  }
 ]
 
 //路由守卫

@@ -16,8 +16,8 @@
       <el-badge is-dot class="item" title="你在干嘛">有人打电话给你了</el-badge>
     </el-tooltip>
     <button @click="toMesssage" class="btn">点我弹出消息提示</button>
-    <button @click="toDialog" class="btn">点我弹出二次封装的dialog</button>
-    <button @click="toAhide" class="btn">点我导航缩放</button>
+    <!-- <button @click="toDialog" class="btn">点我弹出二次封装的dialog</button> -->
+    <!-- <button @click="toAhide" class="btn">点我导航缩放</button> -->
     <!-- 模拟登录弹窗 -->
     <el-dialog
       title="提示"

@@ -17,7 +17,10 @@ export default {
   },
   data() {
     return {
+      val:'11111111111111',
       //声明变量
+      //vm.$data 访问原始数据对象。Vue 实例也代理了 data 对象上所有的 property，因此访问 vm.a 等价于访问 vm.$data.a。
+      //节制地使用 $parent 和 $children - 它们的主要目的是作为访问组件的应急方法。更推荐用 props 和 events 实现父子组件通信
     }
   },
   watch: {
@@ -59,7 +62,9 @@ export default {
   beforeCreate() {},
   created() {},
   beforeMount() {},
-  mounted() {},
+  mounted() {
+    console.log("111111111",this)
+  },
   beforeUpdate() {},
   updated() {},
   beforeDestroy() {},
