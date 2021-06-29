@@ -24,6 +24,20 @@ export default {
     clearTimeout(this.timer)
   },
   methods: {
+    toBlurImgHide_1() {
+      //点击图片也应该收起来大图片
+      const viewers = document.querySelectorAll('.viewer-container')
+      // let isFind = false
+      if (viewers.length) {
+        for (let i = 0; i < viewers.length; i++) {
+          if (viewers[i].classList.contains('viewer-in')) {
+            viewers[i].querySelector('.viewer-canvas').click()
+            // isFind = true
+            this.isOpenImg = false
+          }
+        }
+      }
+    },
     countdown() {
       const end = Date.parse(new Date('2021-06-30'))
       const now = Date.parse(new Date())
