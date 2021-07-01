@@ -37,6 +37,7 @@ const selfInstruction = () => import("./reviewVue/selfInstruction.vue")
 const all = () => import("./reviewVue/all.vue")
 const mytransition = () => import("./reviewVue/mytransition.vue")
 const other = () => import("./reviewVue/other.vue")
+const communicat = () => import("./reviewVue/communicat.vue")
 
 //新的测试学习模块
 const another = () => import("./ceshi/index.vue")
@@ -337,7 +338,13 @@ const routes = [
         name: '其他',
         path: '/other',
         component: other
-      }
+      }, {
+        id: 1707,
+        text: '组件通信',
+        name: '组件通信',
+        path: '/communicat',
+        component: communicat
+      },
     ]
   },
   {
