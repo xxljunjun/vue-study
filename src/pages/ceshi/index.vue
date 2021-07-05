@@ -2,6 +2,8 @@
   <div class="other">
     <div>倒计时功能实现</div>
     <div>{{ `${day}天 ${hr}小时 ${min}分钟 ${sec}秒` }}</div>
+    <img src="@/assets/banner@2x.png" alt="" class="banner" />
+    <div class="daoying"></div>
   </div>
 </template>s
 
@@ -64,5 +66,24 @@ export default {
 <style lang="scss" scoped>
 .other {
   color: #000;
+  .banner {
+    height: 245px;
+    width: 320px;
+    border-radius: 10px;
+    // -webkit-box-reflect: below;
+    // -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left
+    //       bottom, from(transparent), to(rgba(250, 250, 250, 0.5)));
+    vertical-align: top;
+  }
+  .daoying {
+    height: 245px;
+    width: 320px;
+    background: linear-gradient(
+      rgba(248, 143, 32, 0.6) 0%,
+      rgba(238, 59, 14, 0) 18%
+    );
+    border-radius: 16px;
+    opacity: 0.4;
+  }
 }
 </style>
