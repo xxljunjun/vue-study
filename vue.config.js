@@ -1,5 +1,9 @@
 
 // 线上打包路径，请根据项目实际线上情况
+const path = require("path")
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
 const Version  = new Date().getTime();
 module.exports = {
   // publicPath: process.env.NODE_ENV === 'production' ? '/site/vue-demo/' : '/',  // 公共路径
@@ -29,12 +33,8 @@ module.exports = {
   //     // minSize: 30000,   //字节 引入的文件大于30kb才进行分割
   //     maxSize: 50000,  //50kb，尝试将大于50kb的文件拆分成n个50kb的文件
   //   })
-  //   config.resolve.alias // 添加别名
-  //     .set('@', resolve('src'))
-  //     .set('@assets', resolve('src/assets'))
-  //     .set('@components', resolve('src/components'))
-  //     .set('@views', resolve('src/views'))
-  //     .set('@store', resolve('src/store'));
+    // config.resolve.alias // 添加别名
+      // .set('@', resolve('src'))
   // },
 
   // css: {
