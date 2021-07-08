@@ -28,12 +28,15 @@ Vue.filter('myFilter', function (value) {
 
 Vue.directive('my-directive', {
   // 这里将会被 `bind` 和 `update` 调用
-  bind: function () {},
-  inserted: function () {},
-  update: function () {},
-  componentUpdated: function () {},
-  unbind: function () {}
+  bind: function () { },
+  inserted: function () { },
+  update: function () { },
+  componentUpdated: function () { },
+  unbind: function () { }
 })
+console.log("main.js中的process.env.NODE_ENV", process.env.NODE_ENV)
+console.log("main.js中的process.env.outputDir ", process.env.outputDir)
+
 
 //全局混入
 Vue.mixin({
