@@ -4,10 +4,14 @@
     <div>{{ `${day}天 ${hr}小时 ${min}分钟 ${sec}秒` }}</div>
     <img src="@/assets/banner@2x.png" alt="" class="banner" />
     <div class="daoying"></div>
+    <hr/>
+    <button @click="toMessage">点我弹出提示</button>
   </div>
-</template>s
+</template>
 
 <script>
+import Notice from "./components/notice.vue"
+import create from "@/utils/create.js"
 export default {
   data() {
     return {
@@ -20,12 +24,21 @@ export default {
   },
   components: {},
   mounted() {
-    this.countdown()
+    // this.countdown()
   },
   destroyed() {
     clearTimeout(this.timer)
   },
   methods: {
+    toMessage(){
+      const notice = create(Notice,{
+        title:"111111111111111",
+        message:"22222222222222",
+        deraction:10000,
+      })
+      console.log(notice)
+      notice.show()
+    },
     toBlurImgHide_1() {
       //点击图片也应该收起来大图片
       const viewers = document.querySelectorAll('.viewer-container')
