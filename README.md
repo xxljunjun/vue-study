@@ -253,3 +253,64 @@ cnpm install node-sass -D
 # 20210623添加复习vue模块
 学习vue.confige
 测试
+
+# vue2.0项目集成ts
+* vue-class-component：扩展vue支持typescript，将原有的vue语法通过声明的方式来支持ts
+* vue-property-decorator：基于vue-class-component扩展更多装饰器
+* ts-loader：让webpack能够识别ts文件
+* tslint-loader：tslint用来约束文件编码
+* tslint-config-standard：tslint 配置 standard风格的约束
+```
+npm i vue-class-component vue-property-decorator -S
+npm i ts-loader typescript tslint tslint-loader tslint-config-standard -D
+```
+* 在tsconfig.json文件中
+```
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "ESNext",
+    "strict": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true  // 启用装饰器
+  }
+}
+```
+* 在shims-tsx.d.ts
+```
+import Vue, { VNode } from 'vue';
+
+declare global {
+  namespace JSX {
+    // tslint:disable no-empty-interface
+    interface Element extends VNode {}
+    // tslint:disable no-empty-interface
+    interface ElementClass extends Vue {}
+    interface IntrinsicElements {
+      [elem: string]: any;
+    }
+  }
+}
+```
+* 在shims-vue.d.ts
+```
+declare module '*.vue' {
+  import Vue from 'vue';
+  export default Vue;
+}
+```
+* tslint.json
+```
+{
+    "extends": "tslint-config-standard",
+    "globals": {
+      "require": true
+    }
+  }
+```
+
+如果是vue3.0的项目
+```
+
+```

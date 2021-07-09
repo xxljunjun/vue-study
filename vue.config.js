@@ -7,8 +7,8 @@ module.exports = {
   //部署正式环境时域名加前缀process.env.NODE_ENV
   publicPath: '/',
 
-  //将构建好的文件输出到哪里
-  outputDir: process.env.outputDir || 'dist',
+  //将构建好的文件输出到哪里process.env.outputDir 
+  outputDir: 'dist',
 
 
   //指定生成的index.html的输出路径
@@ -73,14 +73,28 @@ module.exports = {
       }
     }
   },
-
+  // resolve: { extensions: [".ts", ".tsx", ".js", ".json"] },
   // module: {
-  //   rules:
-  //   {
-  //     test: /\.less$/,
-  //     loader: "style-loader!css-loader!less-loader"
-  //   }
-  //   ]
+  // rules: [
+  //     {
+  //         test: /\.ts$/,
+  //         exclude: /node_modules/,
+  //         enforce: 'pre',
+  //         loader: 'tslint-loader'
+  //     },
+  //     {
+  //         test: /\.tsx?$/,
+  //         loader: 'ts-loader',
+  //         exclude: /node_modules/,
+  //         options: {
+  //             appendTsSuffixTo: [/\.vue$/],
+  //         }
+  //     },
+  // {
+  //   test: /\.less$/,
+  //   loader: "style-loader!css-loader!less-loader"
+  // }
+  // ]
   // }
 
 }

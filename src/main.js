@@ -7,7 +7,7 @@ import store from './store/'
 import http from '@/utils/api'
 import img from '@/utils/img'
 import 'element-ui/lib/theme-chalk/index.css'
-import "@/components/common/directives.js"
+// import "@/components/common/directives.js"
 import messagebox from '@/utils/my-element/validate'
 Vue.prototype.$MessageBox = messagebox
 import '@/styles/element-variables.scss'
@@ -26,17 +26,16 @@ Vue.filter('myFilter', function (value) {
   // 返回处理后的值
 })
 
-Vue.directive('my-directive', {
-  // 这里将会被 `bind` 和 `update` 调用
-  bind: function () { },
-  inserted: function () { },
-  update: function () { },
-  componentUpdated: function () { },
-  unbind: function () { }
-})
+// Vue.directive('my-directive', {
+//   // 这里将会被 `bind` 和 `update` 调用
+//   bind: function () { },
+//   inserted: function () { },
+//   update: function () { },
+//   componentUpdated: function () { },
+//   unbind: function () { }
+// })
 console.log("main.js中的process.env.NODE_ENV", process.env.NODE_ENV)
 console.log("main.js中的process.env.outputDir ", process.env.outputDir)
-
 
 //全局混入
 Vue.mixin({
