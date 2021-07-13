@@ -57,8 +57,8 @@ module.exports = {
     //   warnings: false,
     //   errors: true
     // },
-    host: "localhost",
-    port: 8080, // 端口号
+    // host: "localhost",
+    port: 8090, // 端口号
     open: false, //配置自动启动浏览器
     hotOnly: true, // 热更新
     proxy: {

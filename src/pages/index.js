@@ -42,6 +42,7 @@ const communicat = () => import("./reviewVue/communicat.vue")
 //新的测试学习模块
 const another = () => import("./ceshi/index.vue")
 const iframs = () => import("./ceshi/iframs.vue")
+const websorketxxl = () => import("./ceshi/hellow-websorket.vue")
 
 // import { FindPanelA, FindPanelB } from '../components/'
 
@@ -366,6 +367,12 @@ const routes = [
         name: 'iframs',
         path: '/iframs',
         component: iframs
+      }, {
+        id: 1803,
+        text: 'websorket',
+        name: 'websorket',
+        path: '/websorket',
+        component: websorketxxl
       },
     ]
   }
