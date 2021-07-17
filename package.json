@@ -24,7 +24,8 @@
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.4.9",
     "vuex": "^3.5.1",
-    "wangeditor": "^4.7.1"
+    "wangeditor": "^4.7.1",
+    "xxl-lang": "^1.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
