@@ -3,24 +3,27 @@
     <div ref="divbox" id="divbox">动画效果</div>
     <button @click="pushClassName">点击我添加类名</button>
     <button @click="rmoveClassName">点击我去除类名</button>
-    <pop title="我是标题" :cancleBack="cancle" :comfireBack="comfire">
-    <template slot="content"> 我是内容 </template>
-</pop>
+    <pop
+      title="我是标题"
+      :cancleBack="cancle"
+      :comfireBack="comfire"
+      :isShow.sync="popShowStatus"
+    >
+      <template slot="content"> 我是内容 </template>
+    </pop>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {}
+    return {
+      popShowStatus: true,
+    }
   },
   methods: {
-    cancle(){
-
-    },
-    comfire(){
-
-    },
+    cancle() {},
+    comfire() {},
     pushClassName() {
       console.log('000')
       let divbox = document.getElementById('divbox')
