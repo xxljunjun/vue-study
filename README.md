@@ -1,4 +1,4 @@
-# 环境
+### 一、安装环境
 ```
 node v12+
 node -v
@@ -10,8 +10,7 @@ npm -v
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
 
-
-# 脚手架
+### 二、脚手架
 ```
 cnpm install @vue/cli -g
 vue create vue-study
@@ -24,7 +23,7 @@ npm run build  // 上线（测试环境、生产环境）
 cnpm install
 ```
 
-# 路由
+### 三、路由
 
 * 多页面应用
 * 单页面应用：一切皆组件，所谓页面的切换，实际上背后是组件的销毁与创建。
@@ -116,7 +115,7 @@ Hash模式 vs. History模式
 路由守卫
 
 
-# 状态管理
+### 四、状态管理
 
 1、如何理解“状态”？
 
@@ -189,7 +188,7 @@ this.$store.commit('mutationFn', payload)
   mapState 和 mapGetters 在写在 computed 中
   mapActions 和 mapMutations 写在 methods 中
 
-# axios
+### 五、集成axios
 
 它是一个HTTP工具，用于与后端进行数据交互。
 特点：
@@ -218,7 +217,7 @@ module.exports = {
 }
 ```
 
-# 管理系统开发
+### 六、element和sass
 
 ToB vs. ToC
 
@@ -240,7 +239,7 @@ cnpm install node-sass -D
 </style>
 ```
 
-# 项目总结
+### 七、项目总结
 
 1、技术栈：vue、路由、sass、axios、vuex，都是怎么用的？
 2、UI框架：具体组件名（布局类组件、表单、表格、分页、导航），具体到某个组件是怎么用的？
@@ -249,12 +248,7 @@ cnpm install node-sass -D
 5、项目亮点：如果没有亮点，就直说没有。
 6、项目难点：业务复杂（表单多、表格筛选条件多），后端接口多、不稳定，产品需求不稳定。小团队加强沟通。
 
-
-# 20210623添加复习vue模块
-学习vue.confige
-测试
-
-# vue2.0项目集成ts
+### 八、vue2.0项目集成ts
 * vue-class-component：扩展vue支持typescript，将原有的vue语法通过声明的方式来支持ts
 * vue-property-decorator：基于vue-class-component扩展更多装饰器
 * ts-loader：让webpack能够识别ts文件
