@@ -142,7 +142,7 @@ const routes = [
     arr: [
       {
         id: 1201,
-        path: '/music',
+        path: '/music/:id',
         // component: ()=>import('./music/MusicList.vue'),
         component: MusicList,
         text: '音乐列表',
