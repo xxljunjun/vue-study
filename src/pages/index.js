@@ -6,6 +6,7 @@ const Home = () => import('./home/Home.vue')
 const Find = () => import('./home/Find.vue')
 const Todo = () => import('./home/Todo.vue')
 const excel = () => import("./home/excel.vue")
+const mycanvas = ()=>import("./home/mycanvas.vue")
 
 const User = () => import('./user/User.vue')
 const MusicList = () => import('./music/MusicList.vue')
@@ -109,6 +110,14 @@ const routes = [
         path: '/excel',
         name: "导出excel",
         component: excel,
+        exact: true
+      },
+      {
+        id: 1005,
+        text: 'canvas',
+        path: '/canvas',
+        name: "canvas学习",
+        component: mycanvas,
         exact: true
       }
     ]
