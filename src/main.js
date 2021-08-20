@@ -20,9 +20,9 @@ Vue.use(ElementUI)
 Vue.prototype.$http = http
 Vue.prototype.$img = img
 
-import pop from 'xxl-lang'
-import "xxl-lang/lib/pop.css"
-Vue.component('pop', pop)
+// import pop from 'xxl-lang'
+// import "xxl-lang/lib/pop.css"
+// Vue.component('pop', pop)
 
 
 Vue.filter('myFilter', function (value) {
