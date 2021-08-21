@@ -1,9 +1,10 @@
 <template>
   <div class="mycanvas">
-    <canvas id="myCanvas" width="200" height="200"></canvas>
+    <!-- <canvas id="myCanvas" width="200" height="200"></canvas>
     <canvas id="myCanvas_1" width="200" height="200"></canvas>
     <canvas id="tutorial" width="200" height="200"></canvas>
-    <canvas id="solar" width="500" height="500"></canvas>
+    <canvas id="solar" width="500" height="500"></canvas> -->
+    <canvas id="xxl" width="1000" height="1000"></canvas>
   </div>
 </template>
 
@@ -12,18 +13,25 @@ let sun;
 let earth;
 let moon;
 let ctx;
+import { canvasLine } from "./canvas/canvas.js";
+import { canvasSoh } from "./canvas/two.js";
 export default {
   data() {
     return {};
   },
   mounted() {
-    this.canvasInit();
-    this.canvasInit_1();
-    this.draw_1();
-    this.init_1();
-    this.draw()
+    // this.canvasInit();
+    // this.canvasInit_1();
+    // this.draw_1();
+    // this.init_1();
+    // this.draw()
+    this.xxl();
   },
   methods: {
+    xxl() {
+      let data = "40";
+      canvasSoh(data, "xxl");
+    },
     canvasInit() {
       //首先，找到 <canvas> 元素:
       var c = document.getElementById("myCanvas");
@@ -141,7 +149,7 @@ export default {
       ctx.drawImage(moon, -3.5, -3.5);
       ctx.restore();
 
-    //   requestAnimationFrame(this.draw());
+      //   requestAnimationFrame(this.draw());
     },
   },
 };
