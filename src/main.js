@@ -20,6 +20,9 @@ Vue.use(ElementUI)
 Vue.prototype.$http = http
 Vue.prototype.$img = img
 
+import lottie from 'vue-lottie';
+Vue.component('lottie', lottie)
+
 // import pop from 'xxl-lang'
 // import "xxl-lang/lib/pop.css"
 // Vue.component('pop', pop)
