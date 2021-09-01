@@ -109,6 +109,20 @@ export function fetchAdList(params) {
   })
 }
 
+export function imgupload(payload,cancelToken, cd) {
+  return fetch({
+    url: '/api/v1/ad/list',
+    method: 'POST',
+    data: payload,
+			onUploadProgress: function (progressEvent) {
+				if (progressEvent.lengthComputable) {
+					cd(progressEvent);
+				}
+			},
+			cancelToken: cancelToken,
+  })
+}
+
 
 export default {
   fetchQqMusic,

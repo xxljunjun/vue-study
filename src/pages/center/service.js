@@ -6,7 +6,7 @@ const instance = axios.create({
 
 // let baseURL = process.env.BASE_URL.toString();
 //这里根据自己项目接口的位置自行设定
-let baseURL = "https://jsonplaceholder.typicode.com/";
+let baseURL = "https://way.jd.com/";
 
 
 instance.defaults.baseURL = baseURL; //baseURL用于自动切换本地环境接口和生产环境接口

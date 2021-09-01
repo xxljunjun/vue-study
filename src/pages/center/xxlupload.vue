@@ -67,7 +67,21 @@ export default {
     }
   },
   methods: {
+    init(){
+      let payload = ''
+      let cancelToken = ''
+      let cd =(progressEvent) => {
+              let completeVal =
+                (progressEvent.loaded / progressEvent.total) * 100 || 0
+              this.percent = completeVal
+              this.uploadState = false
+            }
+      imgupload((payload,cancelToken, cd).then(res=>{
+
+      })
+    },
     changeFiles(e) {
+      console.log(e)
       let files = e.srcElement.files
       if (files && files.length) {
         if (files[0].size / 1024 / 1024 > 5) {
@@ -77,13 +91,15 @@ export default {
         }
         this.originalName = files[0].name
         this.source = axios.CancelToken.source()
+        console.log('this.source',this.source)
         let formData = new FormData()
         formData.append('file', files[0])
         this.loading = true
         this.complete = false
+
         upload
           .uploadFile(
-            'api/common/file/upload',
+            'TONGLI/WPictureUpload',
             formData,
             this.source.token,
             (progressEvent) => {
