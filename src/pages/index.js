@@ -6,7 +6,7 @@ const Home = () => import('./home/Home.vue')
 const Find = () => import('./home/Find.vue')
 const Todo = () => import('./home/Todo.vue')
 const excel = () => import("./home/excel.vue")
-const mycanvas = ()=>import("./home/mycanvas.vue")
+const mycanvas = () => import("./home/mycanvas.vue")
 
 const User = () => import('./user/User.vue')
 const MusicList = () => import('./music/MusicList.vue')
@@ -15,7 +15,6 @@ const GoodList = () => import('./good/GoodList.vue')
 const GoodAdd = () => import('./good/GoodAdd.vue')
 
 // 广告中心模块
-const Ad = () => import('./center/Ad.vue')
 const stard = () => import('./stard/stard.vue')
 const stard1 = () => import('./stard/stard1.vue')
 const stard2 = () => import('./stard/stard2.vue')
@@ -44,6 +43,10 @@ const communicat = () => import("./reviewVue/communicat.vue")
 const another = () => import("./ceshi/index.vue")
 const iframs = () => import("./ceshi/iframs.vue")
 const websorketxxl = () => import("./ceshi/hellow-websorket.vue")
+
+//营销中心
+const Ad = () => import('./center/Ad.vue')
+const xxlupload = () => import("./center/xxlupload.vue")
 
 // import { FindPanelA, FindPanelB } from '../components/'
 
@@ -204,6 +207,13 @@ const routes = [
         name: '轮播图',
         path: '/center/ad',
         component: Ad
+      },
+      {
+        id: 1401,
+        text: '断点续传',
+        name: '断点续传',
+        path: '/center/xxlupload',
+        component: xxlupload
       }
     ]
   },
