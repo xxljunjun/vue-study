@@ -1,37 +1,36 @@
-
-import Vue from 'vue'
-import App from './App.vue'
-import ElementUI from 'element-ui'
-import router from './router'
-import store from './store/'
-import http from '@/utils/api'
-import img from '@/utils/img'
-import 'element-ui/lib/theme-chalk/index.css'
+import Vue from "vue";
+import App from "./App.vue";
+import ElementUI from "element-ui";
+import router from "./router";
+import store from "./store/";
+import http from "@/utils/api";
+import img from "@/utils/img";
+import "element-ui/lib/theme-chalk/index.css";
+import "@/styles/element.scss";
 // import "@/components/common/directives.js"
-import messagebox from '@/utils/my-element/validate'
-Vue.prototype.$MessageBox = messagebox
-import '@/styles/element-variables.scss'
-import animated from 'animate.css'
-import JsonExcel from 'vue-json-excel'  //导出excel表格
+import messagebox from "@/utils/my-element/validate";
+Vue.prototype.$MessageBox = messagebox;
+import "@/styles/element-variables.scss";
+import animated from "animate.css";
+import JsonExcel from "vue-json-excel"; //导出excel表格
 
-Vue.component('downloadExcel', JsonExcel)
-Vue.use(animated)
-Vue.use(ElementUI)
-Vue.prototype.$http = http
-Vue.prototype.$img = img
+Vue.component("downloadExcel", JsonExcel);
+Vue.use(animated);
+Vue.use(ElementUI);
+Vue.prototype.$http = http;
+Vue.prototype.$img = img;
 
-import lottie from 'vue-lottie';
-Vue.component('lottie', lottie)
+import lottie from "vue-lottie";
+Vue.component("lottie", lottie);
 
 // import pop from 'xxl-lang'
 // import "xxl-lang/lib/pop.css"
 // Vue.component('pop', pop)
 
-
-Vue.filter('myFilter', function (value) {
-  return value + 1
+Vue.filter("myFilter", function(value) {
+  return value + 1;
   // 返回处理后的值
-})
+});
 
 // Vue.directive('my-directive', {
 //   // 这里将会被 `bind` 和 `update` 调用
@@ -41,24 +40,24 @@ Vue.filter('myFilter', function (value) {
 //   componentUpdated: function () { },
 //   unbind: function () { }
 // })
-console.log("main.js中的process.env.NODE_ENV", process.env.NODE_ENV)
-console.log("main.js中的process.env.outputDir ", process.env.outputDir)
+console.log("main.js中的process.env.NODE_ENV", process.env.NODE_ENV);
+console.log("main.js中的process.env.outputDir ", process.env.outputDir);
 
 //全局混入
 Vue.mixin({
   data() {
     return {
       mainNum: 1,
-    }
+    };
   },
   methodes: {
     mainConsole() {
-      console.log("main.js打印的")
-    }
-  }
-})
+      console.log("main.js打印的");
+    },
+  },
+});
 
-var version = Number(Vue.version.split('.')[0])
+var version = Number(Vue.version.split(".")[0]);
 
 if (version === 2) {
   // console.log("11111111")
@@ -72,25 +71,25 @@ if (version === 2) {
 }
 
 //事件总线通信
-const eventBus = new Vue()
-Vue.prototype.$eventBus = eventBus
+const eventBus = new Vue();
+Vue.prototype.$eventBus = eventBus;
 
 // 阻止启动生产消息
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 // 根容器创建,Vue环境
 new Vue({
   router,
   store,
   // i18n,
-  render: h => h(App),
+  render: (h) => h(App),
 
   // render: function (createElement) {
   //   return createElement(App);
   // },
   //h的意思就是 Hyperscript
-  el: '#app'
-})
+  el: "#app",
+});
 // app.$mount('#app')
 
 // console.log("vue的配置", Vue.config)
