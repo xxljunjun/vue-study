@@ -57,5 +57,5 @@ export default new Vuex.Store({
     //vuex分模块处理
     todo,
     music
-  }
+  },
 })

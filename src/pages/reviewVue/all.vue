@@ -1,10 +1,23 @@
 <template>
   <div class="allVue">
-    <Child />
+    {{val}}
+    {{one_name}}
+    <Child 
+      :val='val' 
+      :one_name='one_name' 
+      :two_name='two_name'
+      @changeVal='changeVal'
+      @changeName='changeName'
+    />
   </div>
 </template>
 
 <script>
+//$attrs和 $listeners是两个对象，
+//$attrs 里存放的是父组件中绑定的非 props 属性，
+//$listeners里存放的是父组件中绑定的非原生事件。
+//inheritAttrs选项则为是否挂载到组件元素的attribute。
+//子组件的顶层标签元素中（本例子的div元素）会渲染出父组件传递过来的属性
 import Child from './components/child.vue'
 export default {
   provide() {
@@ -17,7 +30,9 @@ export default {
   },
   data() {
     return {
-      val:'11111111111111',
+      val:'我是父组件的val',
+      one_name:'xxl',
+      two_name:'junjun',
       //声明变量
       //vm.$data 访问原始数据对象。Vue 实例也代理了 data 对象上所有的 property，因此访问 vm.a 等价于访问 vm.$data.a。
       //节制地使用 $parent 和 $children - 它们的主要目的是作为访问组件的应急方法。更推荐用 props 和 events 实现父子组件通信
@@ -40,6 +55,14 @@ export default {
   },
   methods: {
     //函数function
+    changeVal(val){
+      console.log('val',val)
+      this.val = val
+    },
+    changeName(name){
+      console.log('name',name)
+      this.one_name = name
+    }
   },
   components: {
     Child,

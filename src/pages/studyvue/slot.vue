@@ -1,11 +1,16 @@
 <template>
   <div class="slot_box">
+    我是父组件
     <!-- 唯一一种特殊的仔子组件上的v-slot -->
-    <!-- <ChildenSlot v-slot：default> 111111111111111111 </ChildenSlot> -->
+    <!-- <ChildenSlot v-slot：default> {{'我是父组件的插槽内容'}} </ChildenSlot> -->
     <!-- 具名插槽 -->
-    <!-- <ChildenSlot>
-      <template v-slot:header> 111111111 </template>
-    </ChildenSlot> -->
+    <ChildenSlot>
+      <template v-slot:header='slotprops'> 
+        <p>{{slotprops.data}}</p>
+       </template>
+       <template v-slot:middle> <p>222222222222</p> </template>
+        <template v-slot:footer> <p>33333333333333</p> </template>
+    </ChildenSlot>
     <!-- 作用域插槽 ：slotProps可以是任意名字-->
     <!-- <ChildenSlot v-slot:default="slotProps"
       >{{ slotProps.user.firstName }}
@@ -19,7 +24,7 @@
     <button @click="changeSlot">点我改变slot</button> -->
 
     <!--  -->
-    <ChildenSlot #default="{ user }"> {{ user.firstName }} </ChildenSlot>
+    <!-- <ChildenSlot #default="{ user }"> {{ user.firstName }} </ChildenSlot> -->
   </div>
 </template>
 

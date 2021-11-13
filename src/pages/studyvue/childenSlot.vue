@@ -1,8 +1,10 @@
 <template>
   <div class="childen">
-    <!-- <slot>22222222222</slot> -->
-    <!-- <slot name="header"></slot> -->
-    <slot v-bind:user="user">{{ user.lastName }}</slot>
+    <!-- <slot></slot> -->
+    <slot name="header" :data='user'>0000000000</slot>
+    <slot name="middle"></slot>
+    <slot name="footer"></slot>
+    <!-- <slot v-bind:user="user">{{ user.lastName }}</slot> -->
 
     <!-- <slot name="one">2222222222</slot>
     <slot name="two">3333333333</slot> -->

@@ -76,9 +76,9 @@ export default {
               this.percent = completeVal
               this.uploadState = false
             }
-      imgupload((payload,cancelToken, cd).then(res=>{
+      // imgupload((payload,cancelToken, cd).then(res=>{
 
-      })
+      // })
     },
     changeFiles(e) {
       console.log(e)
