@@ -51,95 +51,95 @@
 </template>
 
 <script>
-import { upload } from './service.js'
-import axios from 'axios'
+import { upload } from "./service.js";
+import axios from "axios";
 export default {
   data() {
     return {
       source: null,
-      fileName: '',
+      fileName: "",
       percent: 0,
-      originalName: '',
+      originalName: "",
       uploadState: false,
-      filePath: '',
+      filePath: "",
       loading: false,
       complete: false,
-    }
+    };
   },
   methods: {
-    init(){
-      let payload = ''
-      let cancelToken = ''
-      let cd =(progressEvent) => {
-              let completeVal =
-                (progressEvent.loaded / progressEvent.total) * 100 || 0
-              this.percent = completeVal
-              this.uploadState = false
-            }
+    init() {
+      let payload = "";
+      let cancelToken = "";
+      let cd = (progressEvent) => {
+        let completeVal =
+          (progressEvent.loaded / progressEvent.total) * 100 || 0;
+        this.percent = completeVal;
+        this.uploadState = false;
+      };
       // imgupload((payload,cancelToken, cd).then(res=>{
 
       // })
     },
     changeFiles(e) {
-      console.log(e)
-      let files = e.srcElement.files
+      console.log(e);
+      let files = e.srcElement.files;
       if (files && files.length) {
         if (files[0].size / 1024 / 1024 > 5) {
-          alert('单个文件不能超过5MB')
-          document.getElementById('files').value = null
-          return
+          alert("单个文件不能超过5MB");
+          document.getElementById("files").value = null;
+          return;
         }
-        this.originalName = files[0].name
-        this.source = axios.CancelToken.source()
-        console.log('this.source',this.source)
-        let formData = new FormData()
-        formData.append('file', files[0])
-        this.loading = true
-        this.complete = false
+        this.originalName = files[0].name;
+        this.source = axios.CancelToken.source();
+        console.log("this.source", this.source);
+        let formData = new FormData();
+        formData.append("file", files[0]);
+        this.loading = true;
+        this.complete = false;
 
         upload
           .uploadFile(
-            'TONGLI/WPictureUpload',
+            "TONGLI/WPictureUpload",
             formData,
             this.source.token,
             (progressEvent) => {
               let completeVal =
-                (progressEvent.loaded / progressEvent.total) * 100 || 0
-              this.percent = completeVal
-              this.uploadState = false
+                (progressEvent.loaded / progressEvent.total) * 100 || 0;
+              this.percent = completeVal;
+              this.uploadState = false;
             }
           )
           .then((res) => {
             if (res.data.status) {
-              this.percent = 100
-              this.uploadState = true
-              this.filePath = res.data.resultBody.filePath
-              this.loading = false
-              this.complete = true
+              this.percent = 100;
+              this.uploadState = true;
+              this.filePath = res.data.resultBody.filePath;
+              this.loading = false;
+              this.complete = true;
             } else {
-              alert('上传失败')
-              this.loading = false
-              this.complete = false
+              alert("上传失败");
+              this.loading = false;
+              this.complete = false;
             }
           })
           .catch((thrown) => {
             if (axios.isCancel(thrown)) {
-              alert('用户取消上传')
-              this.loading = false
-              this.complete = false
+              alert("用户取消上传");
+              this.loading = false;
+              this.complete = false;
             } else {
-              alert('其它错误异常')
+              alert("其它错误异常");
             }
-          })
+          });
       }
-      document.getElementById('files').value = null
+      document.getElementById("files").value = null;
     },
     cancelUpload() {
       //取消上传
-      this.source.cancel('Operation canceled by the user.')
+      this.source.cancel("Operation canceled by the user.");
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

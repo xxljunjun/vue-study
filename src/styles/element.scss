@@ -1,1 +1,23 @@
 /* 修改element样式 */
+
+.el-loading-spinner .circular {
+  width: 42px;
+  height: 42px;
+  animation: loading-rotate 2s linear infinite;
+  display: none;
+}
+.el-loading-spinner {
+  background: url(../assets/loading.png) no-repeat;
+  background-size: 48px 48px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 50%;
+  left: 45%;
+}
+.el-image__placeholder {
+  background: url(../assets/loading.png) no-repeat 50% 50%;
+  background-size: 50%;
+  width: 50vw;
+  height: 200px;
+}
