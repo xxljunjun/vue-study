@@ -1,25 +1,35 @@
 // 路由懒加载：使用webpack代码分割功能和异步组件的特点来实现，目的性能优化。
 
-//首页概况
+//首页概况模块
 const Home = () => import("./home/Home.vue");
 const Find = () => import("./home/Find.vue");
 const Todo = () => import("./home/Todo.vue");
 const excel = () => import("./home/excel.vue");
 const mycanvas = () => import("./home/mycanvas.vue");
 
+//系统管理user模块
 const User = () => import("./user/User.vue");
+
+//音乐管理模块
 const MusicList = () => import("./music/MusicList.vue");
 const MusicDetail = () => import("./music/MusicDetail.vue");
+
+//商品管理模块
 const GoodList = () => import("./good/GoodList.vue");
 const GoodAdd = () => import("./good/GoodAdd.vue");
 
-// 广告中心模块
+//营销中心
+const Ad = () => import("./center/Ad.vue");
+const xxlupload = () => import("./center/xxlupload.vue");
+
+// 预备练习
 const stard = () => import("./stard/stard.vue");
 const stard1 = () => import("./stard/stard1.vue");
 const stard2 = () => import("./stard/stard2.vue");
 const stard3 = () => import("./stard/stard3.vue");
 
 //vue的学习模块
+const all_name = () => import("./studyvue/all_name.vue");
 const Studyvue = () => import("./studyvue/studyvue.vue");
 const Slot = () => import("./studyvue/slot.vue");
 const lili = () => import("./studyvue/lili.vue");
@@ -33,7 +43,7 @@ const donghua = () => import("./studyvue/donghua.vue");
 const apiFunction = () => import("./reviewVue/index.vue");
 const myMine = () => import("./reviewVue/myMine.vue");
 const selfInstruction = () => import("./reviewVue/selfInstruction.vue");
-const all = () => import("./reviewVue/all.vue");
+
 const mytransition = () => import("./reviewVue/mytransition.vue");
 const other = () => import("./reviewVue/other.vue");
 const communicat = () => import("./reviewVue/communicat.vue");
@@ -44,9 +54,7 @@ const iframs = () => import("./ceshi/iframs.vue");
 const websorketxxl = () => import("./ceshi/hellow-websorket.vue");
 const eleloading = () => import("./ceshi/eleloading.vue");
 
-//营销中心
-const Ad = () => import("./center/Ad.vue");
-const xxlupload = () => import("./center/xxlupload.vue");
+
 
 // import { FindPanelA, FindPanelB } from '../components/'
 
@@ -127,9 +135,9 @@ const routes = [
   },
   {
     id: 11,
-    text: "系统管理",
+    text: "系统管理user",
     icon: "el-icon-setting",
-    name: "系统管理",
+    name: "系统管理user",
     arr: [
       {
         id: 1101,
@@ -201,7 +209,7 @@ const routes = [
     icon: "el-icon-goods",
     arr: [
       {
-        id: 1401,
+        id: 142201,
         text: "轮播图",
         name: "轮播图",
         path: "/center/ad",
@@ -223,7 +231,7 @@ const routes = [
     icon: "el-icon-goods",
     arr: [
       {
-        id: 1401,
+        id: 1445601,
         text: "20210209",
         name: "20210209",
         path: "/stard/one",
@@ -258,6 +266,13 @@ const routes = [
     name: "学习vue3",
     icon: "el-icon-goods",
     arr: [
+      {
+        id: 1600,
+        text: "vue总",
+        name: "vue总",
+        path: "/all",
+        component: all_name,
+      },
       {
         id: 1601,
         text: "第一天的学习",
@@ -342,13 +357,6 @@ const routes = [
         name: "自定义指令",
         path: "/selfInstruction",
         component: selfInstruction,
-      },
-      {
-        id: 1704,
-        text: "vue总",
-        name: "vue总",
-        path: "/all",
-        component: all,
       },
       {
         id: 1705,
