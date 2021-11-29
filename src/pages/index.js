@@ -17,6 +17,7 @@ const MusicDetail = () => import("./music/MusicDetail.vue");
 //商品管理模块
 const GoodList = () => import("./good/GoodList.vue");
 const GoodAdd = () => import("./good/GoodAdd.vue");
+const vueanimation = () => import("./good/vueanimation.vue");
 
 //营销中心
 const Ad = () => import("./center/Ad.vue");
@@ -43,7 +44,6 @@ const donghua = () => import("./studyvue/donghua.vue");
 const apiFunction = () => import("./reviewVue/index.vue");
 const myMine = () => import("./reviewVue/myMine.vue");
 const selfInstruction = () => import("./reviewVue/selfInstruction.vue");
-
 const mytransition = () => import("./reviewVue/mytransition.vue");
 const other = () => import("./reviewVue/other.vue");
 const communicat = () => import("./reviewVue/communicat.vue");
@@ -199,6 +199,13 @@ const routes = [
         path: "/good/add/:id",
         component: GoodAdd,
         isNotNav: true,
+      },
+      {
+        id: 1303,
+        text: "vue动画",
+        name: "vue动画",
+        path: "/vueanimation",
+        component: vueanimation,
       },
     ],
   },
