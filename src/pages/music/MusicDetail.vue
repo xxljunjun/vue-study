@@ -1,25 +1,33 @@
 <template>
-<div>
-  <h1>音乐详情页</h1>
-</div>
+  <div>
+    <h1>音乐详情页</h1>
+  </div>
 </template>
 
 <script>
 export default {
-  // 使用props来接收路由中的动态参数
-  // props: {
-  //   id: {
-  //     type: String,
-  //     required: true
-  //   }
-  // },
+  data() {
+    return {};
+  },
+  watch: {
+    "$route.params.id": {
+      handler(newVal) {
+        console.log("监听的值", newVal);
+        this.getData(newVal);
+      },
+      deep: true,
+      immediate: true,
+    },
+  },
+  methods: {
+    getData(id) {
+      console.log("请求成功了！！", id);
+    },
+  },
   mounted() {
-    let id = this.$route.params.id
-    // 根据id来调接口，获取音乐详情
-    console.log('音乐id', id)
-  }
-}
+    console.log("动态路由传参的值", this.$route.params);
+  },
+};
 </script>
 
-<style lang="css" scoped>
-</style>
+<style lang="css" scoped></style>
