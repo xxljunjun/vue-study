@@ -53,8 +53,7 @@ const another = () => import("./ceshi/index.vue");
 const iframs = () => import("./ceshi/iframs.vue");
 const websorketxxl = () => import("./ceshi/hellow-websorket.vue");
 const eleloading = () => import("./ceshi/eleloading.vue");
-
-
+const txtText = () => import("./ceshi/txtText.vue");
 
 // import { FindPanelA, FindPanelB } from '../components/'
 
@@ -421,6 +420,13 @@ const routes = [
         name: "eleloading",
         path: "/eleloading",
         component: eleloading,
+      },
+      {
+        id: 1805,
+        text: "txt",
+        name: "txt",
+        path: "/txt",
+        component: txtText,
       },
     ],
   },
