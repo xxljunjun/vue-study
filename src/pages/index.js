@@ -54,6 +54,7 @@ const iframs = () => import("./ceshi/iframs.vue");
 const websorketxxl = () => import("./ceshi/hellow-websorket.vue");
 const eleloading = () => import("./ceshi/eleloading.vue");
 const txtText = () => import("./ceshi/txtText.vue");
+const hookevent = () =>import("./ceshi/hookevent.vue")
 
 // import { FindPanelA, FindPanelB } from '../components/'
 
@@ -427,6 +428,13 @@ const routes = [
         name: "txt",
         path: "/txt",
         component: txtText,
+      },
+      {
+        id: 1806,
+        text: "hookevent",
+        name: "hookevent",
+        path: "/hookevent",
+        component: hookevent,
       },
     ],
   },
