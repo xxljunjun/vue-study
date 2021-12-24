@@ -366,3 +366,7 @@ cnpm install vue-json-excel -S
 import JsonExcel from "vue-json-excel"; //导出excel表格
 Vue.component("downloadExcel", JsonExcel);
 ```
+### 
+```
+npm install file-saver --save
+```

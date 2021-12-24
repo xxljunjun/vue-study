@@ -13,10 +13,16 @@
       <el-button type="primary" size="small">导出EXCEL</el-button>
     </download-excel>
     <!-- <div class="box" v-if="status" @click.stop></div> -->
+    <p>---------------</p>
+    <div>
+      <button @click="toTXT">点我使用插件下载txt</button>
+    </div>
+
   </div>
 </template>
 
 <script>
+ import {saveAs} from 'file-saver';
 import getTXT from "@/utils/getTXT.js";
 import { gettxtlist } from "@/utils/xxlmock.js";
 export default {
@@ -72,6 +78,12 @@ export default {
     window.addEventListener("click", this.hide);
   },
   methods: {
+    toTXT(){
+      var data = '要导出的内容'
+      let str = new Blob([data], {type: 'text/plain;charset=utf-8'});
+      // 注意这里要手动写上文件的后缀名
+      saveAs(str, `导出文件时的名字.txt`);
+    },
     hide() {
       this.status = false;
     },
