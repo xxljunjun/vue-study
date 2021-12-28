@@ -55,6 +55,7 @@ const websorketxxl = () => import("./ceshi/hellow-websorket.vue");
 const eleloading = () => import("./ceshi/eleloading.vue");
 const txtText = () => import("./ceshi/txtText.vue");
 const hookevent = () =>import("./ceshi/hookevent.vue")
+const chooseFund = () =>import("./ceshi/chooseFund.vue")
 
 // import { FindPanelA, FindPanelB } from '../components/'
 
@@ -436,6 +437,13 @@ const routes = [
         path: "/hookevent",
         component: hookevent,
       },
+      {
+        id: 1806,
+        text: "chooseFund",
+        name: "chooseFund",
+        path: "/choosefund",
+        component: chooseFund,
+      }
     ],
   },
 ];
