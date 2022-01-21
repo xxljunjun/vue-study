@@ -15,6 +15,7 @@ export default new Vuex.Store({
     ],
     status: 0, //大于0 的时候需要弹出登录窗口
     token: "",
+    mesageStatus:false,
   },
   getters: {
     // getters相当于组件的计算属性，它与state相关，当它所关系的state变量发生变化时，会自动重新计算
@@ -40,6 +41,11 @@ export default new Vuex.Store({
       if (payload) {
         state.largemsg = payload
       }
+    },
+    openDialog(state, payload){
+      console.log(state)
+      console.log(payload)
+      state.mesageStatus = payload
     }
     // set_token(state,payload){
 

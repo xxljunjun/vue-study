@@ -13,7 +13,9 @@
       content="你有两条未读消息"
       placement="bottom"
     >
-      <el-badge is-dot class="item" title="你在干嘛">有人打电话给你了</el-badge>
+      <el-badge is-dot class="item" title="你在干嘛">
+        <img src="@/assets/lingdang.png" alt="" class="lingdang" @click="clickOpenMessage">
+      </el-badge>
     </el-tooltip>
     <button @click="toMesssage" class="btn">点我弹出消息提示</button>
     <!-- <button @click="toDialog" class="btn">点我弹出二次封装的dialog</button> -->
@@ -113,6 +115,12 @@ export default {
     this.$eventBus.$off("changeLarge")
   },
   methods: {
+    clickOpenMessage(){
+      console.log("点击打开消息通知")
+      let {mesageStatus} = this.$store.state
+
+      this.$store.commit('openDialog',!mesageStatus)
+    },
     toAhide(){
       this.$eventBus.$emit("changeLarge")
     },
@@ -183,6 +191,10 @@ export default {
 <style lang="scss" scoped>
 .qf-header {
   color: #000;
+  .lingdang{
+    height: 30px;
+    width: 30px;
+  }
   .btn {
     margin-right: 20px;
     cursor: pointer;
@@ -198,6 +210,7 @@ export default {
 .item {
   line-height: 30px;
   margin-left: 20px;
+  margin: 0 20px;
   cursor: pointer;
 }
 </style>
