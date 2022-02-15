@@ -13,10 +13,13 @@
         </el-main>
     </el-container>
   </el-container>
+  <!-- 消息模块 -->
+  <XxlMessage/>
 </div>
 </template>
 
 <script>
+import XxlMessage from './xxlMessage.vue'
 export default {
   data(){
     return{
@@ -38,7 +41,8 @@ export default {
   components: {
     QfAside: ()=>import('./QfAside.vue'),
     QfHeader: ()=>import('./QfHeader.vue'),
-    QfMain: ()=>import('./QfMain.vue')
+    QfMain: ()=>import('./QfMain.vue'),
+    XxlMessage
   }
 }
 </script>
