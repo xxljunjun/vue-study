@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { nanoid } from 'nanoid'
 import * as echarts from 'echarts'
 import Step1 from '@/pages/home/components/Step1.vue'
 import Step2 from '@/pages/home/components/Step2.vue'
@@ -45,6 +46,9 @@ export default {
     Step2,
   },
   mounted() {
+    
+    
+    console.log("生成唯一nanoid",nanoid())
     console.log(':id传参', this.$route)
     this.initEchart()
     this.initEchart_1()
