@@ -5,7 +5,7 @@ function resolve(dir) {
 // 线上打包路径，请根据项目实际线上情况
 module.exports = {
   //部署正式环境时域名加前缀process.env.NODE_ENV
-  publicPath: "/",
+  publicPath: "/vuestudy/",
 
   //将构建好的文件输出到哪里process.env.outputDir
   outputDir: "dist",
