@@ -378,3 +378,8 @@ npm install file-saver --save
 ```
 npm install nanoid -S
 ```
+
+### 十二、安装生成vue-pdf的插件
+```
+npm install --save vue-pdf
+```
