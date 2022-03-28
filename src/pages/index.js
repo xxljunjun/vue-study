@@ -54,8 +54,11 @@ const iframs = () => import("./ceshi/iframs.vue");
 const websorketxxl = () => import("./ceshi/hellow-websorket.vue");
 const eleloading = () => import("./ceshi/eleloading.vue");
 const txtText = () => import("./ceshi/txtText.vue");
-const hookevent = () =>import("./ceshi/hookevent.vue")
-const chooseFund = () =>import("./ceshi/chooseFund.vue")
+const hookevent = () => import("./ceshi/hookevent.vue");
+const chooseFund = () => import("./ceshi/chooseFund.vue");
+
+//大成基金功能模块
+const fundcode = () => import("./fundcode/index.vue"); //!!!注意书写
 
 // import { FindPanelA, FindPanelB } from '../components/'
 
@@ -438,12 +441,27 @@ const routes = [
         component: hookevent,
       },
       {
-        id: 1806,
+        id: 1807,
         text: "chooseFund",
         name: "chooseFund",
         path: "/choosefund",
         component: chooseFund,
-      }
+      },
+    ],
+  },
+  {
+    id: 19,
+    text: "大成基金",
+    name: "大成基金",
+    icon: "el-icon-goods",
+    arr: [
+      {
+        id: 201,
+        text: "index首页",
+        name: "index首页",
+        path: "/fundcode",
+        component: fundcode,
+      },
     ],
   },
 ];
