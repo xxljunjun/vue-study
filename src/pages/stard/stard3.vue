@@ -9,19 +9,19 @@
 </template>
 
 <script>
-const ChilderPro = () => import('@/pages/home/components/childerPro')
+const ChilderPro = () => import("@/pages/stard/components/childerPro");
 export default {
   data() {
     return {
-      message: 'hello',
-      propA: '000000',
-      propB: '000000',
-      propC: '000000',
-      propD: '000000',
-      propE: '000000',
-      propF: '000000',
+      message: "hello",
+      propA: "000000",
+      propB: "000000",
+      propC: "000000",
+      propD: "000000",
+      propE: "000000",
+      propF: "000000",
       isShow: true,
-    }
+    };
   },
   components: {
     ChilderPro,
@@ -71,15 +71,18 @@ export default {
   },
   computed: {
     //具有缓存
-    computedMessage: function () {
-      return this.message.split('').reverse().join('')
+    computedMessage: function() {
+      return this.message
+        .split("")
+        .reverse()
+        .join("");
     },
   },
   methods: {
     init() {},
     gitThing() {},
     toChange() {
-      this.isShow = false
+      this.isShow = false;
     },
   },
   beforeCreate() {
@@ -113,8 +116,8 @@ export default {
   directives: {
     focus: {
       // 指令的定义
-      inserted: function (el) {
-        el.focus()
+      inserted: function(el) {
+        el.focus();
       },
     },
     // pin:{
@@ -124,8 +127,7 @@ export default {
     // 	}
     // }
   },
-}
+};
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

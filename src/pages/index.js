@@ -1,9 +1,9 @@
 // 路由懒加载：使用webpack代码分割功能和异步组件的特点来实现，目的性能优化。
 
-//首页概况模块
+//插件使用模块
 const Home = () => import("./home/Home.vue");
-const Find = () => import("./home/Find.vue");
-const Todo = () => import("./home/Todo.vue");
+const fileSaver = () => import("./home/fileSaver.vue");
+const vuePdf = () => import("./home/vuePdf.vue");
 const excel = () => import("./home/excel.vue");
 const mycanvas = () => import("./home/mycanvas.vue");
 
@@ -78,15 +78,15 @@ const fundcode = () => import("./fundcode/index.vue"); //!!!注意书写
 const routes = [
   {
     id: 10,
-    text: "首页概况",
+    text: "插件的使用",
     icon: "el-icon-s-home",
     arr: [
       {
         id: 1001,
         path: "/",
         component: Home,
-        text: "首页概况",
-        name: "首页概况",
+        text: "echars",
+        name: "echars",
         exact: true,
         // 【命名视图】当访问首页时，使用一个叫abc的视图容器来承载Home组件
         // components: {
@@ -97,11 +97,11 @@ const routes = [
       },
       {
         id: 1002,
-        path: "/find",
-        component: Find,
-        text: "公司新闻",
+        path: "/fileSaver",
+        component: fileSaver,
+        text: "fileSaver插件",
         exact: false,
-        name: "公司新闻",
+        name: "fileSaver插件",
         // 嵌套视图
         // children: [
         //   { path: '', component: FindPanelA },   // /find/
@@ -113,10 +113,10 @@ const routes = [
       },
       {
         id: 1003,
-        text: "TodoList",
-        path: "/todo",
-        name: "TodoList",
-        component: Todo,
+        text: "vuePdf",
+        path: "/vuePdf",
+        name: "vuePdf",
+        component: vuePdf,
         exact: true,
       },
       {
