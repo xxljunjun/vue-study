@@ -5,8 +5,8 @@ const Home = () => import("./home/Home.vue");
 const fileSaver = () => import("./home/fileSaver.vue");
 const vuePdf = () => import("./home/vuePdf.vue");
 const excel = () => import("./home/excel.vue");
-const mycanvas = () => import("./home/mycanvas.vue");  
-const dateFns = () =>import("./home/dateFns.vue")
+const mycanvas = () => import("./home/mycanvas.vue");
+const dateFns = () => import("./home/dateFns.vue");
 
 //系统管理user模块
 const User = () => import("./user/User.vue");
@@ -137,14 +137,13 @@ const routes = [
         exact: true,
       },
       {
-        id: 1005,
+        id: 1006,
         text: "dateFns",
         path: "/dateFns",
         name: "dateFns学习",
         component: dateFns,
         exact: true,
       },
-      
     ],
   },
   {
