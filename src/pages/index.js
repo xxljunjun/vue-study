@@ -1,5 +1,8 @@
 // 路由懒加载：使用webpack代码分割功能和异步组件的特点来实现，目的性能优化。
 
+//elementUI的使用
+const myElement = () => import("./myElment/index.vue");
+
 //插件使用模块
 const Home = () => import("./home/Home.vue");
 const fileSaver = () => import("./home/fileSaver.vue");
@@ -7,6 +10,7 @@ const vuePdf = () => import("./home/vuePdf.vue");
 const excel = () => import("./home/excel.vue");
 const mycanvas = () => import("./home/mycanvas.vue");
 const dateFns = () => import("./home/dateFns.vue");
+const mybigNumber = () => import("./home/mybigNumber.vue");
 
 //系统管理user模块
 const User = () => import("./user/User.vue");
@@ -78,6 +82,21 @@ const fundcode = () => import("./fundcode/index.vue"); //!!!注意书写
 // 在详情页面有两种接收路由参数的方式，一种使用 $route.params，另一种是使用props传值
 const routes = [
   {
+    id: 21,
+    text: "element的使用",
+    icon: "el-icon-s-home",
+    arr: [
+      {
+        id: 2101,
+        path: "/myElement",
+        component: myElement,
+        text: "UI库的使用",
+        name: "UI库的使用",
+        exact: true,
+      },
+    ],
+  },
+  {
     id: 10,
     text: "插件的使用",
     icon: "el-icon-s-home",
@@ -142,6 +161,14 @@ const routes = [
         path: "/dateFns",
         name: "dateFns学习",
         component: dateFns,
+        exact: true,
+      },
+      {
+        id: 1007,
+        text: "mybigNumber",
+        path: "/mybigNumber",
+        name: "mybigNumber学习",
+        component: mybigNumber,
         exact: true,
       },
     ],

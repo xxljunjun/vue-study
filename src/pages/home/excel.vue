@@ -5,9 +5,9 @@
       class="btn btn-default"
       :data="json_data"
       :fields="json_fields"
-      worksheet="My Worksheet"
-      type="csv"
-      name="smartWatch.xls"
+      worksheet="sheet"
+      name="24352345"
+      type="xlsx"
     >
       Download Excel (you can customize this with html code!)
     </download-excel>
@@ -19,36 +19,20 @@ export default {
   data() {
     return {
       json_fields: {
-        "Complete name": "name",
-        City: "city",
-        Telephone: "phone.mobile",
-        "Telephone 2": {
-          field: "phone.landline",
-          callback: (value) => {
-            return `Landline Phone - ${value}`;
-          },
-        },
+        名字: "name",
+        城市: "city",
+        电话: "country",
       },
       json_data: [
         {
           name: "诈身份",
           city: "直达佛个地方",
-          country: "United States",
-          birthdate: "1978-03-15",
-          phone: {
-            mobile: "1-541-754-3010",
-            landline: "(541) 754-3010",
-          },
+          country: "111.0000",
         },
         {
           name: "Thessaloniki",
           city: "Athens",
-          country: "Greece",
-          birthdate: "1987-11-23",
-          phone: {
-            mobile: "+1 855 275 5071",
-            landline: "(2741) 2621-244",
-          },
+          country: "222.2222",
         },
       ],
     };
