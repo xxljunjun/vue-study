@@ -37,7 +37,11 @@ module.exports = {
     //展示图形化信息(上线钱注释掉)
     // config.plugin("webpack-bundle-analyzer").use(BundleAnalyzerPlugin);
   },
-  configureWebpack: (config) => {},
+  configureWebpack: {
+    externals: {
+      "./cptable": "var cptable",
+    },
+  },
   //是否使用css分离插件 ExtractTextPlugin
   css: {
     extract: true,

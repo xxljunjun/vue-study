@@ -11,6 +11,7 @@ const excel = () => import("./home/excel.vue");
 const mycanvas = () => import("./home/mycanvas.vue");
 const dateFns = () => import("./home/dateFns.vue");
 const mybigNumber = () => import("./home/mybigNumber.vue");
+const outExcel = () => import("./home/outExcel.vue");
 
 //系统管理user模块
 const User = () => import("./user/User.vue");
@@ -169,6 +170,14 @@ const routes = [
         path: "/mybigNumber",
         name: "mybigNumber学习",
         component: mybigNumber,
+        exact: true,
+      },
+      {
+        id: 1008,
+        text: "outExcel",
+        path: "/outExcel",
+        name: "xlsx学习",
+        component: outExcel,
         exact: true,
       },
     ],
