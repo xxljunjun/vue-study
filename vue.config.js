@@ -3,8 +3,8 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 //可视化打包：上线前注释
-// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-//   .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 module.exports = {
   //部署正式环境时域名加前缀process.env.NODE_ENV
   publicPath: "/vuestudy/",
@@ -35,7 +35,7 @@ module.exports = {
     //添加别名
     config.resolve.alias.set("@", resolve("src"));
     //展示图形化信息(上线钱注释掉)
-    // config.plugin("webpack-bundle-analyzer").use(BundleAnalyzerPlugin);
+    config.plugin("webpack-bundle-analyzer").use(BundleAnalyzerPlugin);
   },
   configureWebpack: {
     externals: {

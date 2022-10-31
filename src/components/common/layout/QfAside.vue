@@ -23,7 +23,7 @@
         <el-menu-item
           v-if='!nav.isNotNav'
           :index="nav.id+''">
-          <router-link  :to='nav.path' v-text='nav.text' tag='div'></router-link>
+          <router-link  :to='nav.path' v-text='nav.text' tag="div"></router-link>
         </el-menu-item>
       </div>
     </el-submenu>

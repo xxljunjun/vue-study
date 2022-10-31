@@ -12,6 +12,7 @@ const mycanvas = () => import("./home/mycanvas.vue");
 const dateFns = () => import("./home/dateFns.vue");
 const mybigNumber = () => import("./home/mybigNumber.vue");
 const outExcel = () => import("./home/outExcel.vue");
+const AgGrid = () => import("./home/AgGrid/index.vue");
 
 //系统管理user模块
 const User = () => import("./user/User.vue");
@@ -178,6 +179,14 @@ const routes = [
         path: "/outExcel",
         name: "xlsx学习",
         component: outExcel,
+        exact: true,
+      },
+      {
+        id: 1009,
+        text: "AgGrid",
+        path: "/AgGrid",
+        name: "AgGrid学习",
+        component: AgGrid,
         exact: true,
       },
     ],
@@ -359,8 +368,8 @@ const routes = [
       },
       {
         id: 1605,
-        text: "轮播图",
-        name: "轮播图",
+        text: "轮播图11",
+        name: "轮播图11",
         path: "/mySwiper",
         component: mySwiper,
       },

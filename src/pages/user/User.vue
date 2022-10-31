@@ -1,11 +1,11 @@
 <template>
   <div>
-    <lottie
+    <!-- <lottie
       :options="defaultOptions"
       :height="200"
       :width="200"
       @animCreated="handleAnimation"
-    />
+    /> -->
     <h1>个人中心</h1>
     <h1>我是xiong和di的父组件：{{ snum }}</h1>
     <Xiong :snum="snum" @zidingyishijian="zidingyishijian" />

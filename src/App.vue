@@ -29,9 +29,6 @@ export default {
     };
   },
   mounted() {
-    // if(token){
-    //   this.isLogin = true
-    // }
     //监听message事件
     window.addEventListener("message", this.receiveMessageFromIndex, false);
   },
@@ -43,7 +40,7 @@ export default {
   },
   methods: {
     receiveMessageFromIndex(event) {
-      console.log("receiveMessageFromIndex", event.data);
+      // console.log("receiveMessageFromIndex", event.data);
     },
   },
 };

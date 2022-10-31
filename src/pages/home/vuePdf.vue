@@ -1,42 +1,42 @@
 <template>
   <div class="pdf_box">
     <div class="tools">
-      <bk-button
+      <el-button
         :theme="'default'"
         type="submit"
         :title="'基础按钮'"
         @click.stop="prePage"
         class="mr10"
       >
-        上一页</bk-button
+        上一页</el-button
       >
-      <bk-button
+      <el-button
         :theme="'default'"
         type="submit"
         :title="'基础按钮'"
         @click.stop="nextPage"
         class="mr10"
       >
-        下一页</bk-button
+        下一页</el-button
       >
       <div class="page">{{ pageNum }}/{{ pageTotalNum }}</div>
-      <bk-button
+      <el-button
         :theme="'default'"
         type="submit"
         :title="'基础按钮'"
         @click.stop="clock"
         class="mr10"
       >
-        顺时针</bk-button
+        顺时针</el-button
       >
-      <bk-button
+      <el-button
         :theme="'default'"
         type="submit"
         :title="'基础按钮'"
         @click.stop="counterClock"
         class="mr10"
       >
-        逆时针</bk-button
+        逆时针</el-button
       >
     </div>
     <pdf
