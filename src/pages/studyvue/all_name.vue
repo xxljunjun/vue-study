@@ -20,7 +20,7 @@
 //inheritAttrs选项则为是否挂载到组件元素的attribute。
 //子组件的顶层标签元素中（本例子的div元素）会渲染出父组件传递过来的属性
 import Child from "../reviewVue/components/child.vue";
-import { mymixin } from "@/components/mixin"; //局部混入方法和data
+import { mymixin } from "@/mixins/mixin"; //局部混入方法和data
 export default {
   components: {
     Child,

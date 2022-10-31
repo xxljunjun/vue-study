@@ -12,7 +12,7 @@
 
 <script>
 import Zi from "./components/zi.vue"
-import {mymixin} from "@/components/mixin"  //局部混入方法和data
+import {mymixin} from "@/mixins/mixin"  //局部混入方法和data
 	export default {
 		data(){
 			return{

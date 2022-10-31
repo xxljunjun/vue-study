@@ -7,7 +7,7 @@ import http from "@/utils/api";
 import "element-ui/lib/theme-chalk/index.css";
 import "@/styles/element.scss";
 import "@/styles/element-variables.scss";
-import messagebox from "@/utils/my-element/validate";
+import messagebox from "@/components/my-element/validate";
 import animated from "animate.css";
 import JsonExcel from "vue-json-excel"; //导出excel表格
 import lottie from "vue-lottie";

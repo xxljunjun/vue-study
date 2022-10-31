@@ -60,7 +60,7 @@
 
 <script>
 import { EventBus } from "@/event-bus.js";
-import Dialog from "@/utils/my-element/dialog.vue";
+import Dialog from "@/components/my-element/dialog.vue";
 export default {
   data() {
     return {
