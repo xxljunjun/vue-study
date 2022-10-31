@@ -433,3 +433,18 @@ module.exports = {
 ```
 
 ```
+
+### 十七、配/gzip(需要配合nginx配置)
++ npm i -D compression-webpack-plugin@6.1.1
+```js
+//踩坑：版本高也不行
+listen 4300;
+    server_name localhost;
+    location / {
+        root /home/static/web/wechat;
+        index /index.html;
+        try_files $uri $uri/ /index.html;
+        gzip_static on; #静态压缩
+    }
+
+```
