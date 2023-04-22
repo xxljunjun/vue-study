@@ -1,5 +1,7 @@
 // 路由懒加载：使用webpack代码分割功能和异步组件的特点来实现，目的性能优化。
 
+const lodashText = ()=>import('./lodashtext/index.vue')
+
 //elementUI的使用
 const myElement = () => import("./myElment/index.vue");
 
@@ -83,6 +85,21 @@ const fundcode = () => import("./fundcode/index.vue"); //!!!注意书写
 // 一般用于，从列表页面到详情页面传递id
 // 在详情页面有两种接收路由参数的方式，一种使用 $route.params，另一种是使用props传值
 const routes = [
+  {
+    id: 22,
+    text: "lodashText的使用",
+    icon: "el-icon-s-home",
+    arr: [
+      {
+        id: 2201,
+        path: "/lodashText",
+        component: lodashText,
+        text: "lodash",
+        name: "lodash",
+        exact: true,
+      },
+    ],
+  },
   {
     id: 21,
     text: "element的使用",
