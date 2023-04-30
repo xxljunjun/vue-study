@@ -20,7 +20,7 @@ module.exports = {
   //生产环境关闭 source map
   productionSourceMap: false,
   //是否使用包含运行时编译器的 Vue 构建版本。设置为 true 后你就可以在 Vue 组件中使用 template 选项了，但是这会让你的应用额外增加 10kb 左右。
-  runtimeCompiler: false,
+  runtimeCompiler: true,
   chainWebpack: (config) => {
     //修复热更新失效
     config.resolve.symlinks(true);
