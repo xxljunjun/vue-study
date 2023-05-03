@@ -285,13 +285,14 @@ export default {
       rowNodeByID.setData(newRowById); // 设置数据
 
       //方式二：
+      //不会重新渲染某一行
       const selRow = this.gridApi.getSelectedRows();
       this.gridApi.updateRowData({
         update: selRow,
       });
 
       //方式三：更新某一行的具体某个值
-      rowNode.setDataValue('price', newPrice);
+      // rowNode.setDataValue('price', newPrice);
 
       //更改刷新  重新排序或者筛选
       // this.gridApi.refreshClientSideRowModel('sort');

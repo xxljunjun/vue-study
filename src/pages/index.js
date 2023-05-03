@@ -207,7 +207,7 @@ const routes = [
         component: AgGrid,
         exact: true,
       },{
-        id: 1009,
+        id: 1010,
         text: "AgDemo",
         path: "/AgDemo",
         name: "AgDemo学习",
