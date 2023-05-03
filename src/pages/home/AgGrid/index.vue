@@ -5,6 +5,7 @@
       <el-button @click="clearSelect">清空选择项</el-button>
       <el-button @click="morenSelect">默认选中</el-button>
       <el-button @click="fixedHeader">某一行固定</el-button>
+      <el-button @click="setNewColums">设置新列</el-button>
     </div>
     <div ref="agGrid">
       <ag-grid-vue
@@ -18,6 +19,8 @@
         :columnDefs="columnDefs"
         :rowData="rowData"
         :rowMultiSelectWithClick="true"
+        :rowDragManaged="true"
+        :animateRows="true"
         :getRowId="getRowId"
         :isRowSelectable="isRowSelectable"
         :pinnedTopRowData="pinnedTopRowData"
@@ -101,14 +104,16 @@ export default {
         headerCheckboxSelection: true,
         checkboxSelection: true,
         showDisabledCheckboxes: true,
+        pinned: 'left',
+        initialWidth: 80
       },
       {
         field: "name",
         headerName: "姓名",
-        // valueGetter:'node.id'
         editable: (params) => {
           return true;
-        }
+        },
+        pinned: 'left'
       },
       {
         field: "yearOld",
@@ -131,6 +136,12 @@ export default {
       {
         field: "school",
         headerName: "学校",
+        valueGetter:(params)=>{
+          return '11111111111111111'
+        },
+        valueFormatter:(params)=>{
+          return '222222222222222'
+        },
       },
       {
         field: "txtText",
@@ -147,6 +158,23 @@ export default {
     window.addEventListener("resize", this.autoHeight);
   },
   methods: {
+     /**
+     * 设置新列
+     */
+    setNewColums(){
+      const colDefsMedalsIncluded = [
+        {
+          field: "txtText",
+        headerName: "说明",
+        }
+      ]
+      this.gridApi.setColumnDefs(colDefsMedalsIncluded);
+      this.gridApi.sizeColumnsToFit();
+
+    },
+     /**
+     * 某一行固定
+     */
     fixedHeader() {
       this.gridApi.setPinnedTopRowData([
         {
@@ -261,6 +289,13 @@ export default {
       this.gridApi.updateRowData({
         update: selRow,
       });
+
+      //方式三：更新某一行的具体某个值
+      rowNode.setDataValue('price', newPrice);
+
+      //更改刷新  重新排序或者筛选
+      // this.gridApi.refreshClientSideRowModel('sort');
+      // this.gridApi.refreshClientSideRowModel('filter');
     },
   },
 };

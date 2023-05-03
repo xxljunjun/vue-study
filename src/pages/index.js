@@ -15,6 +15,7 @@ const dateFns = () => import("./home/dateFns.vue");
 const mybigNumber = () => import("./home/mybigNumber.vue");
 const outExcel = () => import("./home/outExcel.vue");
 const AgGrid = () => import("./home/AgGrid/index.vue");
+const AgDemo = () => import("./home/AgGrid/ag-demo.vue");
 
 //系统管理user模块
 const User = () => import("./user/User.vue");
@@ -205,7 +206,15 @@ const routes = [
         name: "AgGrid学习",
         component: AgGrid,
         exact: true,
-      },
+      },{
+        id: 1009,
+        text: "AgDemo",
+        path: "/AgDemo",
+        name: "AgDemo学习",
+        component: AgDemo,
+        exact: true,
+      }
+      
     ],
   },
   {
