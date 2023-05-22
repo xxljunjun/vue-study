@@ -69,6 +69,7 @@ const chooseFund = () => import("./ceshi/chooseFund.vue");
 
 //大成基金功能模块
 const fundcode = () => import("./fundcode/index.vue"); //!!!注意书写
+const jump = () => import("./fundcode/jump/index.vue"); //!!!注意书写
 
 // import { FindPanelA, FindPanelB } from '../components/'
 
@@ -542,6 +543,14 @@ const routes = [
         path: "/fundcode",
         component: fundcode,
       },
+      {
+        id: 201,
+        text: "尝试拖拽",
+        name: "尝试拖拽",
+        path: "/jump",
+        component: jump,
+      },
+      
     ],
   },
 ];
