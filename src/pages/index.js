@@ -71,6 +71,9 @@ const chooseFund = () => import("./ceshi/chooseFund.vue");
 const fundcode = () => import("./fundcode/index.vue"); //!!!注意书写
 const jump = () => import("./fundcode/jump/index.vue"); //!!!注意书写
 
+//websortKet
+const websortket = () => import("./websortket/index.vue")
+
 // import { FindPanelA, FindPanelB } from '../components/'
 
 // 异步组件
@@ -537,14 +540,14 @@ const routes = [
     icon: "el-icon-goods",
     arr: [
       {
-        id: 201,
+        id: 191,
         text: "index首页",
         name: "index首页",
         path: "/fundcode",
         component: fundcode,
       },
       {
-        id: 201,
+        id: 192,
         text: "尝试拖拽",
         name: "尝试拖拽",
         path: "/jump",
@@ -553,6 +556,22 @@ const routes = [
       
     ],
   },
+  {
+    id: 20,
+    text: "websortket",
+    name: "大成基金",
+    icon: "el-icon-goods",
+    arr: [
+      {
+        id: 201,
+        text: "使用websortKet",
+        name: "使用websortKet",
+        path: "/websortket",
+        component: websortket,
+      },
+    ],
+  },
+  
 ];
 
 //路由守卫
