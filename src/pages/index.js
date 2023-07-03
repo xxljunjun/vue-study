@@ -74,6 +74,9 @@ const jump = () => import("./fundcode/jump/index.vue"); //!!!注意书写
 //websortKet
 const websortket = () => import("./websortket/index.vue")
 
+//java
+const javaStudy = () => import("./javaStudy/index.vue")
+
 // import { FindPanelA, FindPanelB } from '../components/'
 
 // 异步组件
@@ -568,6 +571,21 @@ const routes = [
         name: "使用websortKet",
         path: "/websortket",
         component: websortket,
+      },
+    ],
+  },
+  {
+    id: 21,
+    text: "websortket",
+    name: "java学习",
+    icon: "el-icon-goods",
+    arr: [
+      {
+        id: 211,
+        text: "学习javaStudy",
+        name: "学习javaStudy",
+        path: "/javaStudy",
+        component: javaStudy,
       },
     ],
   },
