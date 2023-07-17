@@ -84,9 +84,9 @@ module.exports = {
         changeOrigin: true,
       },
       "/xxl": {
-        target: "http://172.22.38.0:8080", // 是IP的内网地址
+        target: "http://47.102.216.222:8080", // 是IP的内网地址
         changeOrigin: true,
-      },
-    },
+      }
+    }
   },
 };
