@@ -18,8 +18,9 @@ instance.interceptors.request.use(
   function(config) {
     // 在请求被send出去之前，你可以在这里做一些事儿
     // 加token
-    // console.log('请求拦截器', config)
+    console.log('请求拦截器', config)
     config.headers.Authorization = localStorage.getItem("token");
+    config.headers.responseType = config.responseType
     return config;
   },
   function(error) {
@@ -30,6 +31,7 @@ instance.interceptors.request.use(
 // 封装响应拦截器
 instance.interceptors.response.use(
   function(res) {
+    console.log('响应拦截器',res)
     // let response = null;
     // 当后端返回数据，抵达客户端之前时
     // 要数据过滤

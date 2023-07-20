@@ -8,6 +8,10 @@
       <el-form-item label="密 码" prop="password">
         <el-input show-password v-model="user.password"></el-input>
       </el-form-item>
+      <el-form-item label="验证码" prop="password">
+        <img :src="`http://localhost:8080/xxl/captcha.jpg?uuid=${user.uuid}`" alt="" @click="getCode">
+        <el-input show-password v-model="user.captcha"></el-input>
+      </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="loginSubmit">登录</el-button>
       </el-form-item>
@@ -17,12 +21,17 @@
 </template>
 
 <script>
+import {login,getPng} from '@/api/login/'
+import {nanoid} from 'nanoid' 
 export default {
   data: function() {
     return {
+      codePng:'',
       user: {
         username: '',
-        password: ''
+        password: '',
+        captcha:'',
+        uuid:''
       },
       rules: {
         username: [
@@ -36,10 +45,32 @@ export default {
       }
     }
   },
+  mounted(){
+    this.getCode()
+  },
   methods: {
-    loginSubmit() {
-
-      this.$router.replace('/')
+    getCode(){
+      this.user.uuid = nanoid()
+    },
+    // async goTogetPng(){
+    //   let params = {
+    //     uuid:nanoid()
+    //   }
+    //   const res = await getPng(params)
+    //   console.log('res',res)
+    //   this.codePng =  'data:image/png;base64,' + btoa(new Uint8Array(res).reduce((data, byte) => data + String.fromCharCode(byte), ''))
+    // },
+    async loginSubmit() {
+      const {username,password,captcha,uuid} = this.user
+      let params = {
+        username,
+        password,
+        captcha,
+        uuid
+      }
+      const res = await login(params)
+      console.log('res11111',res)
+      // this.$router.replace('/')
 
 
 
@@ -60,6 +91,7 @@ export default {
         // config.headers.Authorization = localStorage.getItem('token')
         // 当token失败（后端验证它失败时），后端一般会提示前端token失败。此时，前端要在响应拦截器重定向到登录页。
       // })
+
     }
   }
 }
